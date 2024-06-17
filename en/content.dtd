@@ -1,0 +1,9 @@
+<!ELEMENT content (title,about,about_content,portfolio,portfolio_content,contact,contact_content,copyright)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT about (#PCDATA)>
+<!ELEMENT about_content (#PCDATA)>
+<!ELEMENT portfolio (#PCDATA)>
+<!ELEMENT portfolio_content (#PCDATA)>
+<!ELEMENT contact (#PCDATA)>
+<!ELEMENT contact_content (#PCDATA)>
+<!ELEMENT copyright (#PCDATA)>

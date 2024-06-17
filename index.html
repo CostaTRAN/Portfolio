@@ -1,1 +1,87 @@
-Hello World
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Costa TRAN</title>
+    <!-- Styles CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Balise alternate pour SEO -->
+    <link rel="alternate" hreflang="en" href="index.html?lang=en">
+    <link rel="alternate" hreflang="fr" href="index.html?lang=fr">
+    <link rel="alternate" hreflang="ja" href="index.html?lang=ja">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            function getQueryParam(param) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            }
+
+            function getLanguage() {
+                let lang = getQueryParam('lang');
+                if (lang) return lang;
+
+                lang = sessionStorage.getItem('lang');
+                if (lang) return lang;
+
+                lang = navigator.language.split('-')[0];
+                if (['en', 'fr', 'ja'].includes(lang)) return lang;
+
+                return 'fr';
+            }
+
+            const lang = getLanguage();
+            sessionStorage.setItem('lang', lang);
+            fetchContent(lang);
+
+            function fetchContent(lang) {
+                fetch(`./${lang}/content.xml`)
+                    .then(response => response.text())
+                    .then(str => (new window.DOMParser()).parseFromString(str, "application/xml"))
+                    .then(data => {
+                        document.getElementById('title').textContent = data.querySelector('title').textContent;
+                        document.getElementById('about').textContent = data.querySelector('about').textContent;
+                        document.getElementById('about_content').textContent = data.querySelector('about_content').textContent;
+                        document.getElementById('portfolio').textContent = data.querySelector('portfolio').textContent;
+                        document.getElementById('portfolio_content').textContent = data.querySelector('portfolio_content').textContent;
+                        document.getElementById('contact').textContent = data.querySelector('contact').textContent;
+                        document.getElementById('contact_content').textContent = data.querySelector('contact_content').textContent;
+                        document.getElementById('copyright').textContent = data.querySelector('copyright').textContent;
+                    })
+                    .catch(error => console.error('Error loading content:', error));
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1 id="title">Portfolio de Costa TRAN</h1>
+        <!-- Sélecteur de langue -->
+        <div>
+            <a href="?lang=fr"><img src="./img/fr-flag.png" alt="Français"></a>
+            <a href="?lang=en"><img src="./img/en-flag.png" alt="English"></a>
+            <a href="?lang=ja"><img src="./img/ja-flag.png" alt="日本語"></a>
+        </div>
+    </header>
+    <main>
+        <!-- Contenu principal -->
+        <section>
+            <h2 id="about">À propos de moi</h2>
+            <p id="about_content">Les informations à propos de moi.</p>
+        </section>
+        <section>
+            <h2 id="portfolio">Portfolio</h2>
+            <p id="portfolio_content">Contenu du portfolio.</p>
+        </section>
+        <section>
+            <h2 id="contact">Contact</h2>
+            <p id="contact_content">Informations de contact.</p>
+        </section>
+    </main>
+    <footer>
+        <p id="copyright">&copy; 2024 Portfolio de Costa TRAN</p>
+    </footer>
+</body>
+</html>

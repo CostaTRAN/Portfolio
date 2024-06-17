@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE content SYSTEM "content.dtd" [
+    <!ENTITY copy "&#169;">
+]>
+<content>
+    <title>コスタ・トランのポートフォリオ</title>
+    <about>私について</about>
+    <about_content>私に関する情報。</about_content>
+    <portfolio>ポートフォリオ</portfolio>
+    <portfolio_content>ポートフォリオの内容。</portfolio_content>
+    <contact>連絡先</contact>
+    <contact_content>連絡先情報。</contact_content>
+    <copyright>&copy; 2024 コスタ・トランのポートフォリオ</copyright>
+</content>

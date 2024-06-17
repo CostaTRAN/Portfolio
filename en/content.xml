@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE content SYSTEM "content.dtd" [
+    <!ENTITY copy "&#169;">
+]>
+<content>
+    <title>Costa TRAN's Portfolio</title>
+    <about>About me</about>
+    <about_content>Information about me.</about_content>
+    <portfolio>Portfolio</portfolio>
+    <portfolio_content>Portfolio content.</portfolio_content>
+    <contact>Contact</contact>
+    <contact_content>Contact information.</contact_content>
+    <copyright>&copy; 2024 Costa TRAN's Portfolio</copyright>
+</content>
