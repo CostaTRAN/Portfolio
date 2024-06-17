@@ -10,6 +10,35 @@
     <link rel="alternate" hreflang="en" href="index.html?lang=en">
     <link rel="alternate" hreflang="fr" href="index.html?lang=fr">
     <link rel="alternate" hreflang="ja" href="index.html?lang=ja">
+</head>
+<body>
+    <header>
+        <h1 id="title">Portfolio de Costa TRAN</h1>
+        <!-- Sélecteur de langue -->
+        <div>
+            <a href="?lang=fr"><img src="./img/fr-flag.png" alt="Français"></a>
+            <a href="?lang=en"><img src="./img/en-flag.png" alt="English"></a>
+            <a href="?lang=ja"><img src="./img/ja-flag.png" alt="日本語"></a>
+        </div>
+    </header>
+    <main>
+        <!-- Contenu principal -->
+        <section>
+            <h2 id="about">À propos de moi</h2>
+            <p id="about_content">Les informations à propos de moi.</p>
+        </section>
+        <section>
+            <h2 id="cv">CV</h2>
+            <p><a href="cv.html" id="cv_content">Voir mon CV</a></p>
+        </section>
+        <section>
+            <h2 id="video">Vidéo de présentation</h2>
+            <iframe width="709" height="399" src="https://www.youtube.com/embed/TAlKhARUcoY?cc_lang_pref=ja&cc_load_policy=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+    </main>
+    <footer>
+        <p id="copyright">&copy; 2024 Costa TRAN</p>
+    </footer>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -46,42 +75,12 @@
                         document.getElementById('about_content').textContent = data.querySelector('about_content').textContent;
                         document.getElementById('cv').textContent = data.querySelector('cv').textContent;
                         document.getElementById('cv_content').textContent = data.querySelector('cv_content').textContent;
-                        document.getElementById('contact').textContent = data.querySelector('contact').textContent;
-                        document.getElementById('contact_content').textContent = data.querySelector('contact_content').textContent;
+                        document.getElementById('video').textContent = data.querySelector('video').textContent;
                         document.getElementById('copyright').textContent = data.querySelector('copyright').textContent;
                     })
                     .catch(error => console.error('Error loading content:', error));
             }
         });
     </script>
-</head>
-<body>
-    <header>
-        <h1 id="title">Portfolio de Costa TRAN</h1>
-        <!-- Sélecteur de langue -->
-        <div>
-            <a href="?lang=fr"><img src="./img/fr-flag.png" alt="Français"></a>
-            <a href="?lang=en"><img src="./img/en-flag.png" alt="English"></a>
-            <a href="?lang=ja"><img src="./img/ja-flag.png" alt="日本語"></a>
-        </div>
-    </header>
-    <main>
-        <!-- Contenu principal -->
-        <section>
-            <h2 id="about">À propos de moi</h2>
-            <p id="about_content">Les informations à propos de moi.</p>
-        </section>
-        <section>
-            <h2 id="cv">CV</h2>
-            <p><a href="cv.html" id="cv_content">Voir mon CV</a></p>
-        </section>
-        <section>
-            <h2 id="contact">Contact</h2>
-            <p id="contact_content">Informations de contact.</p>
-        </section>
-    </main>
-    <footer>
-        <p id="copyright">&copy; 2024 Costa TRAN</p>
-    </footer>
 </body>
 </html>

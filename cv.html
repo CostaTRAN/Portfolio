@@ -1,75 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV de Costa TRAN</title>
-    <!-- Styles CSS -->
-    <link rel="stylesheet" href="styles.css">
-    <!-- Balise alternate pour SEO -->
-    <link rel="alternate" hreflang="en" href="index.html?lang=en">
-    <link rel="alternate" hreflang="fr" href="index.html?lang=fr">
-    <link rel="alternate" hreflang="ja" href="index.html?lang=ja">
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-
-            function getQueryParam(param) {
-                const urlParams = new URLSearchParams(window.location.search);
-                return urlParams.get(param);
-            }
-
-            function getLanguage() {
-                let lang = getQueryParam('lang');
-                if (lang) return lang;
-
-                lang = sessionStorage.getItem('lang');
-                if (lang) return lang;
-
-                lang = navigator.language.split('-')[0];
-                if (['en', 'fr', 'ja'].includes(lang)) return lang;
-
-                return 'fr';
-            }
-
-            const lang = getLanguage();
-            sessionStorage.setItem('lang', lang);
-            // URL du fichier XML et XSL
-            const xmlFile = `./${lang}/cv.xml`;
-            const xslFile = `./${lang}/cv.xsl`;
-
-            function transformXMLtoHTML(xmlString, xslString) {
-                const parser = new DOMParser();
-                const xmlDoc = parser.parseFromString(xmlString, "text/xml");
-                const xslDoc = parser.parseFromString(xslString, "text/xml");
-
-                const xsltProcessor = new XSLTProcessor();
-                xsltProcessor.importStylesheet(xslDoc);
-
-                const resultFragment = xsltProcessor.transformToFragment(xmlDoc, document);
-
-                const tempDiv = document.createElement('div');
-                tempDiv.appendChild(resultFragment);
-
-                return tempDiv.innerHTML;
-            }
-
-            // Charger le contenu des fichiers XML et XSL
-            fetch(xmlFile)
-                .then(response => response.text())
-                .then(xmlString => {
-                    fetch(xslFile)
-                        .then(response => response.text())
-                        .then(xslString => {
-                            // Appeler la fonction transformXMLtoHTML avec les contenus des fichiers XML et XSL
-                            const transformedHTML = transformXMLtoHTML(xmlString, xslString);
-                            document.body.innerHTML = transformedHTML; // Injection dans le corps du document
-                        })
-                        .catch(error => console.error('Error loading XSL file:', error));
-                })
-                .catch(error => console.error('Error loading XML file:', error));
-        });
-    </script>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CV de Costa TRAN</title>
+   <!-- Styles CSS -->
+   <link rel="stylesheet" href="styles.css">
+   <!-- Balise alternate pour SEO -->
+   <link rel="alternate" hreflang="en" href="index.html?lang=en">
+   <link rel="alternate" hreflang="fr" href="index.html?lang=fr">
+   <link rel="alternate" hreflang="ja" href="index.html?lang=ja">
 </head>
 <body id="body-content">
    <header>
@@ -166,5 +106,65 @@
          </ul>
       </section>
    </main>
+
+   <script>
+      document.addEventListener("DOMContentLoaded", function() {
+
+          function getQueryParam(param) {
+              const urlParams = new URLSearchParams(window.location.search);
+              return urlParams.get(param);
+          }
+
+          function getLanguage() {
+              let lang = getQueryParam('lang');
+              if (lang) return lang;
+
+              lang = sessionStorage.getItem('lang');
+              if (lang) return lang;
+
+              lang = navigator.language.split('-')[0];
+              if (['en', 'fr', 'ja'].includes(lang)) return lang;
+
+              return 'fr';
+          }
+
+          const lang = getLanguage();
+          sessionStorage.setItem('lang', lang);
+          // URL du fichier XML et XSL
+          const xmlFile = `./${lang}/cv.xml`;
+          const xslFile = `./${lang}/cv.xsl`;
+
+          function transformXMLtoHTML(xmlString, xslString) {
+              const parser = new DOMParser();
+              const xmlDoc = parser.parseFromString(xmlString, "text/xml");
+              const xslDoc = parser.parseFromString(xslString, "text/xml");
+
+              const xsltProcessor = new XSLTProcessor();
+              xsltProcessor.importStylesheet(xslDoc);
+
+              const resultFragment = xsltProcessor.transformToFragment(xmlDoc, document);
+
+              const tempDiv = document.createElement('div');
+              tempDiv.appendChild(resultFragment);
+
+              return tempDiv.innerHTML;
+          }
+
+          // Charger le contenu des fichiers XML et XSL
+          fetch(xmlFile)
+              .then(response => response.text())
+              .then(xmlString => {
+                  fetch(xslFile)
+                      .then(response => response.text())
+                      .then(xslString => {
+                          // Appeler la fonction transformXMLtoHTML avec les contenus des fichiers XML et XSL
+                          const transformedHTML = transformXMLtoHTML(xmlString, xslString);
+                          document.body.innerHTML = transformedHTML; // Injection dans le corps du document
+                      })
+                      .catch(error => console.error('Error loading XSL file:', error));
+              })
+              .catch(error => console.error('Error loading XML file:', error));
+      });
+  </script>
 </body>
 </html>

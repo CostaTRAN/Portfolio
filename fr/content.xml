@@ -8,7 +8,6 @@
     <about_content>Les informations à propos de moi.</about_content>
     <cv>CV</cv>
     <cv_content><a href="cv.html">Voir mon CV</a></cv_content>
-    <contact>Contact</contact>
-    <contact_content>Informations de contact.</contact_content>
+    <video>Vidéo de présentation</video>
     <copyright>&copy; 2024 Costa TRAN</copyright>
 </content>
