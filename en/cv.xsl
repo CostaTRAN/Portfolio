@@ -68,7 +68,6 @@
 
     <!-- Template to match each job element -->
     <xsl:template match="job">
-        <p><strong><xsl:value-of select="title"/></strong> (<xsl:value-of select="date"/>)</p>
         <p><strong>Role: </strong><xsl:value-of select="title"/></p>
         <p><strong>Company: </strong><xsl:value-of select="company"/></p>
         <p><strong>Location: </strong><xsl:value-of select="location"/></p>
@@ -91,5 +90,4 @@
     <xsl:template match="language">
         <li><strong><xsl:value-of select="name"/>: </strong><xsl:value-of select="proficiency"/></li>
     </xsl:template>
-    
 </xsl:stylesheet>

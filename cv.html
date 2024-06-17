@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="fr" vocab="http://schema.org/" typeof="WebPage" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +12,10 @@
    <link rel="alternate" hreflang="fr" href="index.html?lang=fr">
    <link rel="alternate" hreflang="ja" href="index.html?lang=ja">
 </head>
-<body id="body-content">
-   <header>
-      <h1 id="title">CV de Costa TRAN</h1>
+
+<body id="body-content" vocab="http://xmlns.com/foaf/0.1/" typeof="foaf:Person" about="#me">
+   <header vocab="http://purl.org/dc/elements/1.1/">
+      <h1 id="title" property="dc:title">CV de Costa TRAN</h1>
       <nav>
          <a href="index.html">Retour à l'accueil</a>
       </nav>
@@ -28,21 +30,25 @@
       <section>
          <h2>Informations personnelles</h2>
          <p>
-            <strong>Nom: </strong>Costa TRAN</p>
+            <strong>Nom: </strong><span property="foaf:name">Costa TRAN</span>
+         </p>
          <p>
-            <strong>Adresse: </strong>123 Rue Exemple, 75000 Paris, France</p>
+            <strong>Adresse: </strong><span property="foaf:based_near">123 Rue Exemple, 75000 Paris, France</span>
+         </p>
          <p>
-            <strong>Téléphone: </strong>+33 1 23 45 67 89</p>
+            <strong>Téléphone: </strong><span property="foaf:phone">+33 1 23 45 67 89</span>
+         </p>
          <p>
-            <strong>Email: </strong>costa.tran@hotmail.com</p>
+            <strong>Email: </strong><span property="foaf:mbox">costa.tran@hotmail.com</span>
+         </p>
          <p>
-            <strong>Site Web: </strong>
-            <a href="https://costa-tran.netlify.app/">https://costa-tran.netlify.app/</a>
+            <strong>Site Web: </strong><span property="foaf:homepage"><a
+                  href="https://costa-tran.netlify.app/">https://costa-tran.netlify.app/</a></span>
          </p>
       </section>
       <section>
          <h2>Profil</h2>
-         <p>
+         <p property="foaf:description">
             Étudiant à Sup Galilée en tant qu'ingénieur informatique en apprentissage.
          </p>
       </section>
@@ -52,15 +58,15 @@
             <strong>Rôle : </strong> Apprenti ingénieur logiciel
          </p>
          <p>
-            <strong>Entreprise : </strong> Forvia
+            <strong>Entreprise : </strong><span property="foaf:works_for">Forvia</span>
          </p>
          <p>
-            <strong>Lieu : </strong> Paris, France
+            <strong>Lieu : </strong><span property="foaf:based_near">Paris, France</span>
          </p>
          <p>
             <strong>Date de début : </strong>05/09/2022
          </p>
-         <p>
+         <p property="foaf:description">
             <strong>Description de la mission : </strong>Développement d'un outil de test pour la stack Bluetooth.
          </p>
       </section>
@@ -70,101 +76,102 @@
             <strong>Diplôme d'Ingénieur Informatique</strong> (2022-2025)
          </p>
          <p>
-            <strong>Institution : </strong>Sup Galilée
+            <strong>Institution : </strong><span property="foaf:schoolHomepage">Sup Galilée</span>
          </p>
          <p>
             <strong>Baccalauréat Général Scientifique</strong> (2018 - 2020)
          </p>
          <p>
-            <strong>Institution : </strong>Lycée La Salle - Saint Rosaire
+            <strong>Institution : </strong><span property="foaf:schoolHomepage">Lycée La Salle - Saint Rosaire</span>
          </p>
       </section>
       <section>
          <h2>Compétences</h2>
          <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>C++</li>
-            <li>XML</li>
-            <li>JSON</li>
-            <li>MySQL</li>
+            <li property="foaf:skill">HTML</li>
+            <li property="foaf:skill">CSS</li>
+            <li property="foaf:skill">JavaScript</li>
+            <li property="foaf:skill">C++</li>
+            <li property="foaf:skill">XML</li>
+            <li property="foaf:skill">JSON</li>
+            <li property="foaf:skill">MySQL</li>
          </ul>
       </section>
       <section>
          <h2>Langues</h2>
          <ul>
             <li>
-               <strong>Français: </strong>Natif
+               <strong>Français: </strong><span property="foaf:language" content="fr">Natif</span>
             </li>
             <li>
-               <strong>Anglais: </strong>B1
+               <strong>Anglais: </strong><span property="foaf:language" content="en">B1</span>
             </li>
             <li>
-               <strong>Japonais: </strong>Débutant
+               <strong>Japonais: </strong><span property="foaf:language" content="ja">Débutant</span>
             </li>
          </ul>
       </section>
    </main>
 
    <script>
-      document.addEventListener("DOMContentLoaded", function() {
+      document.addEventListener("DOMContentLoaded", function () {
 
-          function getQueryParam(param) {
-              const urlParams = new URLSearchParams(window.location.search);
-              return urlParams.get(param);
-          }
+         function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+         }
 
-          function getLanguage() {
-              let lang = getQueryParam('lang');
-              if (lang) return lang;
+         function getLanguage() {
+            let lang = getQueryParam('lang');
+            if (lang) return lang;
 
-              lang = sessionStorage.getItem('lang');
-              if (lang) return lang;
+            lang = sessionStorage.getItem('lang');
+            if (lang) return lang;
 
-              lang = navigator.language.split('-')[0];
-              if (['en', 'fr', 'ja'].includes(lang)) return lang;
+            lang = navigator.language.split('-')[0];
+            if (['en', 'fr', 'ja'].includes(lang)) return lang;
 
-              return 'fr';
-          }
+            return 'fr';
+         }
 
-          const lang = getLanguage();
-          sessionStorage.setItem('lang', lang);
-          // URL du fichier XML et XSL
-          const xmlFile = `./${lang}/cv.xml`;
-          const xslFile = `./${lang}/cv.xsl`;
+         const lang = getLanguage();
+         sessionStorage.setItem('lang', lang);
+         // URL du fichier XML et XSL
+         const xmlFile = `./${lang}/cv.xml`;
+         const xslFile = `./${lang}/cv.xsl`;
 
-          function transformXMLtoHTML(xmlString, xslString) {
-              const parser = new DOMParser();
-              const xmlDoc = parser.parseFromString(xmlString, "text/xml");
-              const xslDoc = parser.parseFromString(xslString, "text/xml");
+         function transformXMLtoHTML(xmlString, xslString) {
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xmlString, "text/xml");
+            const xslDoc = parser.parseFromString(xslString, "text/xml");
 
-              const xsltProcessor = new XSLTProcessor();
-              xsltProcessor.importStylesheet(xslDoc);
+            const xsltProcessor = new XSLTProcessor();
+            xsltProcessor.importStylesheet(xslDoc);
 
-              const resultFragment = xsltProcessor.transformToFragment(xmlDoc, document);
+            const resultFragment = xsltProcessor.transformToFragment(xmlDoc, document);
 
-              const tempDiv = document.createElement('div');
-              tempDiv.appendChild(resultFragment);
+            const tempDiv = document.createElement('div');
+            tempDiv.appendChild(resultFragment);
 
-              return tempDiv.innerHTML;
-          }
+            return tempDiv.innerHTML;
+         }
 
-          // Charger le contenu des fichiers XML et XSL
-          fetch(xmlFile)
-              .then(response => response.text())
-              .then(xmlString => {
-                  fetch(xslFile)
-                      .then(response => response.text())
-                      .then(xslString => {
-                          // Appeler la fonction transformXMLtoHTML avec les contenus des fichiers XML et XSL
-                          const transformedHTML = transformXMLtoHTML(xmlString, xslString);
-                          document.body.innerHTML = transformedHTML; // Injection dans le corps du document
-                      })
-                      .catch(error => console.error('Error loading XSL file:', error));
-              })
-              .catch(error => console.error('Error loading XML file:', error));
+         // Charger le contenu des fichiers XML et XSL
+         fetch(xmlFile)
+            .then(response => response.text())
+            .then(xmlString => {
+               fetch(xslFile)
+                  .then(response => response.text())
+                  .then(xslString => {
+                     // Appeler la fonction transformXMLtoHTML avec les contenus des fichiers XML et XSL
+                     const transformedHTML = transformXMLtoHTML(xmlString, xslString);
+                     document.body.innerHTML = transformedHTML; // Injection dans le corps du document
+                  })
+                  .catch(error => console.error('Error loading XSL file:', error));
+            })
+            .catch(error => console.error('Error loading XML file:', error));
       });
-  </script>
+   </script>
 </body>
+
 </html>

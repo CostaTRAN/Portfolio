@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="fr" vocab="http://schema.org/" typeof="WebPage" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +11,9 @@
     <link rel="alternate" hreflang="fr" href="index.html?lang=fr">
     <link rel="alternate" hreflang="ja" href="index.html?lang=ja">
 </head>
-<body>
-    <header>
-        <h1 id="title">Portfolio de Costa TRAN</h1>
+<body vocab="http://xmlns.com/foaf/0.1/" typeof="foaf:Person" about="#me">
+    <header vocab="http://purl.org/dc/elements/1.1/">
+        <h1 id="title" property="dc:title">Portfolio de Costa TRAN</h1>
         <!-- Sélecteur de langue -->
         <div>
             <a href="?lang=fr"><img src="./img/fr-flag.png" alt="Français"></a>
@@ -24,16 +24,16 @@
     <main>
         <!-- Contenu principal -->
         <section>
-            <h2 id="about">À propos de moi</h2>
-            <p id="about_content">Les informations à propos de moi.</p>
+            <h2 id="about" property="foaf:name">À propos de moi</h2>
+            <p id="about_content" property="foaf:description">Les informations à propos de moi.</p>
         </section>
         <section>
             <h2 id="cv">CV</h2>
-            <p><a href="cv.html" id="cv_content">Voir mon CV</a></p>
+            <p><a href="cv.html" id="cv_content" property="foaf:page">Voir mon CV</a></p>
         </section>
         <section>
             <h2 id="video">Vidéo de présentation</h2>
-            <iframe width="709" height="399" src="https://www.youtube.com/embed/TAlKhARUcoY?cc_lang_pref=ja&cc_load_policy=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="709" height="399" src="https://www.youtube.com/embed/TAlKhARUcoY?cc_lang_pref=ja&cc_load_policy=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </section>
     </main>
     <footer>
