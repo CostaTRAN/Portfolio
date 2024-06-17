@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cv SYSTEM "cv.dtd" [
+    <!ENTITY copy "&#169;">
+]>
+<cv>
+    <personal_info>
+        <name>コスタ・トラン</name>
+        <address>123 エグザンプルストリート、75000 パリ、フランス</address>
+        <phone>+33 1 23 45 67 89</phone>
+        <email>costa.tran@hotmail.com</email>
+        <website>https://costa-tran.netlify.app/</website>
+    </personal_info>
+    <profile>
+        <summary>
+            Sup Galiléeでコンピューターエンジニアリングの見習いとして学生。
+        </summary>
+    </profile>
+    <experience>
+        <job>
+            <title>ソフトウェアエンジニアリング見習い</title>
+            <company>Forvia</company>
+            <location>パリ、フランス</location>
+            <date>2022年09月05日</date>
+            <responsibilities>
+                <responsibility>Bluetoothスタックのテストツールの開発。</responsibility>
+            </responsibilities>
+        </job>
+    </experience>
+    <education>
+        <degree>
+            <title>コンピューターエンジニアリング学位</title>
+            <institution>Sup Galilée</institution>
+            <date>2022年〜2025年</date>
+        </degree>
+        <degree>
+            <title>科学の高校卒業</title>
+            <institution>Lycée La Salle - Saint Rosaire</institution>
+            <date>2018年〜2020年</date>
+        </degree>
+    </education>
+    <skills>
+        <skill>HTML</skill>
+        <skill>CSS</skill>
+        <skill>JavaScript</skill>
+        <skill>C++</skill>
+        <skill>XML</skill>
+        <skill>JSON</skill>
+        <skill>MySQL</skill>
+    </skills>
+    <languages>
+        <language>
+            <name>フランス語</name>
+            <proficiency>ネイティブ</proficiency>
+        </language>
+        <language>
+            <name>英語</name>
+            <proficiency>B1</proficiency>
+        </language>
+        <language>
+            <name>日本語</name>
+            <proficiency>初級</proficiency>
+        </language>
+    </languages>
+    <copyright>&copy; 2024 コスタ・トラン</copyright>
+</cv>

@@ -6,9 +6,9 @@
     <title>Portfolio de Costa TRAN</title>
     <about>À propos de moi</about>
     <about_content>Les informations à propos de moi.</about_content>
-    <portfolio>Portfolio</portfolio>
-    <portfolio_content>Contenu du portfolio.</portfolio_content>
+    <cv>CV</cv>
+    <cv_content><a href="cv.html">Voir mon CV</a></cv_content>
     <contact>Contact</contact>
     <contact_content>Informations de contact.</contact_content>
-    <copyright>&copy; 2024 Portfolio de Costa TRAN</copyright>
+    <copyright>&copy; 2024 Costa TRAN</copyright>
 </content>

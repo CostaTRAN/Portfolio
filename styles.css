@@ -1,16 +1,22 @@
 /* Styles généraux */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
     background-color: #333;
     color: #fff;
-    padding: 10px;
     text-align: center;
+    width: 100%;
 }
 
 header h1 {
@@ -29,21 +35,27 @@ header h1 {
 
 main {
     padding: 20px;
+    flex: 1 0 auto;
 }
 
 footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
     width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    flex-shrink: 0;
 }
 
 img {
     width: 30px;
     height: 20px;
+}
+
+nav a{
+    color: #fff;
+    text-decoration: none;
 }
 
 /* Media query pour les petits écrans */

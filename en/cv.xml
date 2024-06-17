@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cv SYSTEM "cv.dtd" [
+    <!ENTITY copy "&#169;">
+]>
+<cv>
+    <personal_info>
+        <name>Costa TRAN</name>
+        <address>123 Example Street, 75000 Paris, France</address>
+        <phone>+33 1 23 45 67 89</phone>
+        <email>costa.tran@hotmail.com</email>
+        <website>https://costa-tran.netlify.app/</website>
+    </personal_info>
+    <profile>
+        <summary>
+            Student at Sup Galilée as a computer engineering apprentice.
+        </summary>
+    </profile>
+    <experience>
+        <job>
+            <title>Software Engineering Apprentice</title>
+            <company>Forvia</company>
+            <location>Paris, France</location>
+            <date>09/05/2022</date>
+            <responsibilities>
+                <responsibility>Developed a testing tool for the Bluetooth stack.</responsibility>
+            </responsibilities>
+        </job>
+    </experience>
+    <education>
+        <degree>
+            <title>Computer Engineering Degree</title>
+            <institution>Sup Galilée</institution>
+            <date>2022-2025</date>
+        </degree>
+        <degree>
+            <title>High School Diploma in Science</title>
+            <institution>Lycée La Salle - Saint Rosaire</institution>
+            <date>2018 - 2020</date>
+        </degree>
+    </education>
+    <skills>
+        <skill>HTML</skill>
+        <skill>CSS</skill>
+        <skill>JavaScript</skill>
+        <skill>C++</skill>
+        <skill>XML</skill>
+        <skill>JSON</skill>
+        <skill>MySQL</skill>
+    </skills>
+    <languages>
+        <language>
+            <name>French</name>
+            <proficiency>Native</proficiency>
+        </language>
+        <language>
+            <name>English</name>
+            <proficiency>B1</proficiency>
+        </language>
+        <language>
+            <name>Japanese</name>
+            <proficiency>Beginner</proficiency>
+        </language>
+    </languages>
+    <copyright>&copy; 2024 Costa TRAN</copyright>
+</cv>
