@@ -12,18 +12,16 @@
     </personal_info>
     <profile>
         <summary>
-            Student at Sup Galilée as a computer engineering apprentice.
+            Student at Sup Galilée studying computer engineering through an apprenticeship.
         </summary>
     </profile>
     <experience>
         <job>
-            <title>Software Engineering Apprentice</title>
+            <title>Software Engineer Apprentice</title>
             <company>Forvia</company>
             <location>Paris, France</location>
             <date>09/05/2022</date>
-            <responsibilities>
-                <responsibility>Developed a testing tool for the Bluetooth stack.</responsibility>
-            </responsibilities>
+            <responsibility>Development of a testing tool for the Bluetooth stack.</responsibility>
         </job>
     </experience>
     <education>
@@ -33,9 +31,9 @@
             <date>2022-2025</date>
         </degree>
         <degree>
-            <title>High School Diploma in Science</title>
-            <institution>Lycée La Salle - Saint Rosaire</institution>
-            <date>2018 - 2020</date>
+            <title>General Scientific Baccalaureate</title>
+            <institution>La Salle High School - Saint Rosaire</institution>
+            <date>2018-2020</date>
         </degree>
     </education>
     <skills>

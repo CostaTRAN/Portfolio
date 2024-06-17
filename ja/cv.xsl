@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-    <!-- Template matching the root element cv -->
+    <!-- Template to match the root element cv -->
     <xsl:template match="cv">
         <!-- Header -->
         <header>
@@ -9,7 +9,7 @@
             <nav>
                 <a href="index.html">ホームに戻る</a>
             </nav>
-            <!-- Language selector -->
+            <!-- Language Selector -->
             <div>
                 <a href="?lang=fr"><img src="./img/fr-flag.png" alt="Français"/></a>
                 <a href="?lang=en"><img src="./img/en-flag.png" alt="English"/></a>
@@ -17,35 +17,35 @@
             </div>
         </header>
         <main>
-            <!-- Personal information section -->
+            <!-- Section for Personal Information -->
             <section>
                 <h2>個人情報</h2>
                 <p><strong>名前: </strong><xsl:value-of select="personal_info/name"/></p>
                 <p><strong>住所: </strong><xsl:value-of select="personal_info/address"/></p>
-                <p><strong>電話番号: </strong><xsl:value-of select="personal_info/phone"/></p>
-                <p><strong>Email: </strong><xsl:value-of select="personal_info/email"/></p>
+                <p><strong>電話: </strong><xsl:value-of select="personal_info/phone"/></p>
+                <p><strong>メール: </strong><xsl:value-of select="personal_info/email"/></p>
                 <p><strong>ウェブサイト: </strong><a href="{personal_info/website}"><xsl:value-of select="personal_info/website"/></a></p>
             </section>
             
-            <!-- Profile section -->
+            <!-- Profile Section -->
             <section>
                 <h2>プロフィール</h2>
                 <p><xsl:value-of select="profile/summary"/></p>
             </section>
             
-            <!-- Professional experience section -->
+            <!-- Experience Section -->
             <section>
                 <h2>職務経験</h2>
-                <xsl:apply-templates select="experience/job"/>
+                <p><xsl:apply-templates select="experience/job"/></p>
             </section>
             
-            <!-- Education section -->
+            <!-- Education Section -->
             <section>
-                <h2>学歴</h2>
+                <h2>教育</h2>
                 <xsl:apply-templates select="education/degree"/>
             </section>
             
-            <!-- Skills section -->
+            <!-- Skills Section -->
             <section>
                 <h2>スキル</h2>
                 <ul>
@@ -53,7 +53,7 @@
                 </ul>
             </section>
             
-            <!-- Languages section -->
+            <!-- Languages Section -->
             <section>
                 <h2>言語</h2>
                 <ul>
@@ -65,19 +65,29 @@
             <xsl:apply-templates select="copyright"/>
         </footer>
     </xsl:template>
-    
-    <!-- Template for matching each degree element -->
-    <xsl:template match="degree">
-        <p><strong><xsl:value-of select="title"/> (</strong><xsl:value-of select="date"/>)</p>
-        <p><strong>学校: </strong><xsl:value-of select="institution"/></p>
+
+    <!-- Template to match each job element -->
+    <xsl:template match="job">
+        <p><strong><xsl:value-of select="title"/></strong> (<xsl:value-of select="date"/>)</p>
+        <p><strong>役割: </strong><xsl:value-of select="title"/></p>
+        <p><strong>会社: </strong><xsl:value-of select="company"/></p>
+        <p><strong>場所: </strong><xsl:value-of select="location"/></p>
+        <p><strong>開始日: </strong><xsl:value-of select="date"/></p>
+        <p><strong>職務内容: </strong><xsl:value-of select="responsibility"/></p>
     </xsl:template>
     
-    <!-- Template for matching each skill element -->
+    <!-- Template to match each degree element -->
+    <xsl:template match="degree">
+        <p><strong><xsl:value-of select="title"/></strong> (<xsl:value-of select="date"/>)</p>
+        <p><strong>機関: </strong><xsl:value-of select="institution"/></p>
+    </xsl:template>
+    
+    <!-- Template to match each skill element -->
     <xsl:template match="skill">
         <li><xsl:value-of select="."/></li>
     </xsl:template>
     
-    <!-- Template for matching each language element -->
+    <!-- Template to match each language element -->
     <xsl:template match="language">
         <li><strong><xsl:value-of select="name"/>: </strong><xsl:value-of select="proficiency"/></li>
     </xsl:template>

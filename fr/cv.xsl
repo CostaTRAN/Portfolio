@@ -36,7 +36,7 @@
             <!-- Section de l'expérience -->
             <section>
                 <h2>Expérience professionnelle</h2>
-                <xsl:apply-templates select="experience/job"/>
+                <p><xsl:apply-templates select="experience/job"/></p>
             </section>
             
             <!-- Section de l'éducation -->
@@ -65,11 +65,21 @@
             <xsl:apply-templates select="copyright"/>
         </footer>
     </xsl:template>
+
+    <!-- Template pour correspondre à chaque élément de type job -->
+    <xsl:template match="job">
+        <p><strong><xsl:value-of select="title"/></strong> (<xsl:value-of select="date"/>)</p>
+        <p><strong>Rôle : </strong><xsl:value-of select="title"/></p>
+        <p><strong>Entreprise : </strong><xsl:value-of select="company"/></p>
+        <p><strong>Lieu : </strong><xsl:value-of select="location"/></p>
+        <p><strong>Date de début : </strong><xsl:value-of select="date"/></p>
+        <p><strong>Description de la mission : </strong><xsl:value-of select="responsibility"/></p>
+    </xsl:template>
     
     <!-- Template pour correspondre à chaque élément de type degree -->
     <xsl:template match="degree">
-        <p><strong><xsl:value-of select="title"/> (</strong><xsl:value-of select="date"/>)</p>
-        <p><strong>Institution: </strong><xsl:value-of select="institution"/></p>
+        <p><strong><xsl:value-of select="title"/></strong> (<xsl:value-of select="date"/>)</p>
+        <p><strong>Institution : </strong><xsl:value-of select="institution"/></p>
     </xsl:template>
     
     <!-- Template pour correspondre à chaque élément de type skill -->

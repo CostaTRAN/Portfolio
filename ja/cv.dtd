@@ -8,12 +8,11 @@
 <!ELEMENT profile (summary)>
 <!ELEMENT summary (#PCDATA)>
 <!ELEMENT experience (job)>
-<!ELEMENT job (title,company,location,date,responsibilities)>
+<!ELEMENT job (title,company,location,date,responsibility)>
 <!ELEMENT title (#PCDATA)>
 <!ELEMENT company (#PCDATA)>
 <!ELEMENT location (#PCDATA)>
 <!ELEMENT date (#PCDATA)>
-<!ELEMENT responsibilities (responsibility)>
 <!ELEMENT responsibility (#PCDATA)>
 <!ELEMENT education (degree+)>
 <!ELEMENT degree (title,institution,date)>

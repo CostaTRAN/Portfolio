@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-    <!-- Template matching the root element cv -->
+    <!-- Template to match the root element cv -->
     <xsl:template match="cv">
         <!-- Header -->
         <header>
@@ -9,7 +9,7 @@
             <nav>
                 <a href="index.html">Back to home page</a>
             </nav>
-            <!-- Language selector -->
+            <!-- Language Selector -->
             <div>
                 <a href="?lang=fr"><img src="./img/fr-flag.png" alt="Français"/></a>
                 <a href="?lang=en"><img src="./img/en-flag.png" alt="English"/></a>
@@ -17,7 +17,7 @@
             </div>
         </header>
         <main>
-            <!-- Personal information section -->
+            <!-- Section for Personal Information -->
             <section>
                 <h2>Personal Information</h2>
                 <p><strong>Name: </strong><xsl:value-of select="personal_info/name"/></p>
@@ -27,25 +27,25 @@
                 <p><strong>Website: </strong><a href="{personal_info/website}"><xsl:value-of select="personal_info/website"/></a></p>
             </section>
             
-            <!-- Profile section -->
+            <!-- Profile Section -->
             <section>
                 <h2>Profile</h2>
                 <p><xsl:value-of select="profile/summary"/></p>
             </section>
             
-            <!-- Professional experience section -->
+            <!-- Experience Section -->
             <section>
                 <h2>Professional Experience</h2>
-                <xsl:apply-templates select="experience/job"/>
+                <p><xsl:apply-templates select="experience/job"/></p>
             </section>
             
-            <!-- Education section -->
+            <!-- Education Section -->
             <section>
                 <h2>Education</h2>
                 <xsl:apply-templates select="education/degree"/>
             </section>
             
-            <!-- Skills section -->
+            <!-- Skills Section -->
             <section>
                 <h2>Skills</h2>
                 <ul>
@@ -53,7 +53,7 @@
                 </ul>
             </section>
             
-            <!-- Languages section -->
+            <!-- Languages Section -->
             <section>
                 <h2>Languages</h2>
                 <ul>
@@ -65,19 +65,29 @@
             <xsl:apply-templates select="copyright"/>
         </footer>
     </xsl:template>
+
+    <!-- Template to match each job element -->
+    <xsl:template match="job">
+        <p><strong><xsl:value-of select="title"/></strong> (<xsl:value-of select="date"/>)</p>
+        <p><strong>Role: </strong><xsl:value-of select="title"/></p>
+        <p><strong>Company: </strong><xsl:value-of select="company"/></p>
+        <p><strong>Location: </strong><xsl:value-of select="location"/></p>
+        <p><strong>Start Date: </strong><xsl:value-of select="date"/></p>
+        <p><strong>Job Description: </strong><xsl:value-of select="responsibility"/></p>
+    </xsl:template>
     
-    <!-- Template for matching each degree element -->
+    <!-- Template to match each degree element -->
     <xsl:template match="degree">
-        <p><strong><xsl:value-of select="title"/> (</strong><xsl:value-of select="date"/>)</p>
+        <p><strong><xsl:value-of select="title"/></strong> (<xsl:value-of select="date"/>)</p>
         <p><strong>Institution: </strong><xsl:value-of select="institution"/></p>
     </xsl:template>
     
-    <!-- Template for matching each skill element -->
+    <!-- Template to match each skill element -->
     <xsl:template match="skill">
         <li><xsl:value-of select="."/></li>
     </xsl:template>
     
-    <!-- Template for matching each language element -->
+    <!-- Template to match each language element -->
     <xsl:template match="language">
         <li><strong><xsl:value-of select="name"/>: </strong><xsl:value-of select="proficiency"/></li>
     </xsl:template>

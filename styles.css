@@ -23,16 +23,6 @@ header h1 {
     margin: 0;
 }
 
-.language-selector {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-.language-selector a {
-    margin-left: 5px;
-}
-
 main {
     padding: 20px;
     flex: 1 0 auto;
@@ -56,13 +46,4 @@ img {
 nav a{
     color: #fff;
     text-decoration: none;
-}
-
-/* Media query pour les petits écrans */
-@media (max-width: 768px) {
-    .language-selector {
-        position: static;
-        text-align: center;
-        margin-top: 10px;
-    }
 }
