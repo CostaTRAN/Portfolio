@@ -3,12 +3,12 @@
     <!ENTITY copy "&#169;">
 ]>
 <content>
-    <title>Costa TRAN's Portfolio</title>
+    <title>Portfolio of Costa TRAN</title>
     <about>About me</about>
     <about_content>Information about me.</about_content>
-    <portfolio>Portfolio</portfolio>
-    <portfolio_content>Portfolio content.</portfolio_content>
+    <cv>CV</cv>
+    <cv_content><a href="cv.html">View my CV</a></cv_content>
     <contact>Contact</contact>
     <contact_content>Contact information.</contact_content>
-    <copyright>&copy; 2024 Costa TRAN's Portfolio</copyright>
+    <copyright>&copy; 2024 Costa TRAN</copyright>
 </content>

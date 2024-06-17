@@ -1,9 +1,11 @@
-<!ELEMENT content (title,about,about_content,portfolio,portfolio_content,contact,contact_content,copyright)>
+<!ELEMENT content (title,about,about_content,cv,cv_content,contact,contact_content,copyright)>
 <!ELEMENT title (#PCDATA)>
 <!ELEMENT about (#PCDATA)>
 <!ELEMENT about_content (#PCDATA)>
-<!ELEMENT portfolio (#PCDATA)>
-<!ELEMENT portfolio_content (#PCDATA)>
+<!ELEMENT cv (#PCDATA)>
+<!ELEMENT cv_content (a)>
+<!ELEMENT a (#PCDATA)>
+<!ATTLIST a href NMTOKEN #REQUIRED>
 <!ELEMENT contact (#PCDATA)>
 <!ELEMENT contact_content (#PCDATA)>
 <!ELEMENT copyright (#PCDATA)>
