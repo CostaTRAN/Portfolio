@@ -33,7 +33,7 @@
         </section>
         <section>
             <h2 id="video">Vidéo de présentation</h2>
-            <iframe width="709" height="399" src="https://www.youtube.com/embed/TAlKhARUcoY?cc_lang_pref=ja&cc_load_policy=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="700" height="400" src="https://www.youtube.com/embed/tqSVEwSkhAU?cc_lang_pref=fr&cc_load_policy=1" title="Présentation de Costa TRAN" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </section>
     </main>
     <footer>
@@ -61,10 +61,6 @@
                 return 'fr';
             }
 
-            const lang = getLanguage();
-            sessionStorage.setItem('lang', lang);
-            fetchContent(lang);
-
             function fetchContent(lang) {
                 fetch(`./${lang}/content.xml`)
                     .then(response => response.text())
@@ -80,6 +76,10 @@
                     })
                     .catch(error => console.error('Error loading content:', error));
             }
+
+            const lang = getLanguage();
+            sessionStorage.setItem('lang', lang);
+            fetchContent(lang);
         });
     </script>
 </body>
