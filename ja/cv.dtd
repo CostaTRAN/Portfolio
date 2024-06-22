@@ -1,6 +1,7 @@
 <!ELEMENT cv (personal_info,experience,education,skills,languages,copyright)>
-<!ELEMENT personal_info (name,address,phone,email,website,link)>
-<!ELEMENT name (#PCDATA)>
+<!ELEMENT personal_info (first_name,last_name,address,phone,email,website,link)>
+<!ELEMENT first_name (#PCDATA)>
+<!ELEMENT last_name (#PCDATA)>
 <!ELEMENT address (#PCDATA)>
 <!ELEMENT phone (#PCDATA)>
 <!ELEMENT email (#PCDATA)>
@@ -20,5 +21,6 @@
 <!ELEMENT skill (#PCDATA)>
 <!ELEMENT languages (language+)>
 <!ELEMENT language (name,proficiency)>
+<!ELEMENT name (#PCDATA)>
 <!ELEMENT proficiency (#PCDATA)>
 <!ELEMENT copyright (#PCDATA)>

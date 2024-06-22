@@ -2,7 +2,8 @@
 <!DOCTYPE cv SYSTEM "cv.dtd">
 <cv>
     <personal_info>
-        <name>Costa TRAN</name>
+        <first_name>Costa</first_name>
+        <last_name>Tran</last_name>
         <address>123 Example Street, 75000 Paris, France</address>
         <phone>+33 1 23 45 67 89</phone>
         <email>costa.tran@hotmail.com</email>

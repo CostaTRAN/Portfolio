@@ -20,7 +20,8 @@
             <!-- 個人情報のセクション -->
             <section>
                 <h2>個人情報</h2>
-                <p><strong>名前: </strong><xsl:value-of select="personal_info/name"/></p>
+                <p><strong>名: </strong><xsl:value-of select="personal_info/first_name"/></p>
+                <p><strong>名字: </strong><xsl:value-of select="personal_info/last_name"/></p>
                 <p><strong>住所: </strong><xsl:value-of select="personal_info/address"/></p>
                 <p><strong>電話: </strong><xsl:value-of select="personal_info/phone"/></p>
                 <p><strong>メール: </strong><xsl:value-of select="personal_info/email"/></p>

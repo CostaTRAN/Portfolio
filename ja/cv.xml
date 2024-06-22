@@ -2,7 +2,8 @@
 <!DOCTYPE cv SYSTEM "cv.dtd">
 <cv>
     <personal_info>
-        <name>コスタ・トラン</name>
+        <first_name>コスタ</first_name>
+        <last_name>トラン</last_name>
         <address>123例通り、75000パリ、フランス</address>
         <phone>+33 1 23 45 67 89</phone>
         <email>costa.tran@hotmail.com</email>

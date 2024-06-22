@@ -20,7 +20,8 @@
             <!-- Section for personal information -->
             <section>
                 <h2>Personal Information</h2>
-                <p><strong>Name: </strong><xsl:value-of select="personal_info/name"/></p>
+                <p><strong>First name: </strong><xsl:value-of select="personal_info/first_name"/></p>
+                <p><strong>Last name: </strong><xsl:value-of select="personal_info/last_name"/></p>
                 <p><strong>Address: </strong><xsl:value-of select="personal_info/address"/></p>
                 <p><strong>Phone: </strong><xsl:value-of select="personal_info/phone"/></p>
                 <p><strong>Email: </strong><xsl:value-of select="personal_info/email"/></p>
