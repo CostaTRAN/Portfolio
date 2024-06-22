@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE content SYSTEM "content.dtd" [
-    <!ENTITY copy "&#169;">
-]>
+<!DOCTYPE content SYSTEM "content.dtd">
 <content>
     <title>Portfolio of Costa TRAN</title>
     <about>About me</about>
-    <about_content>Information about me.</about_content>
+    <about_content>Student at Sup Galilée engineering school, specializing in computer science, and apprentice software engineer at Forvia.</about_content>
     <cv>CV</cv>
     <cv_content><a href="cv.html">View my CV</a></cv_content>
     <video>Video presentation</video>
-    <copyright>&copy; 2024 Costa TRAN</copyright>
+    <copyright>&#169; 2024 Costa TRAN. All rights reserved.</copyright>
 </content>

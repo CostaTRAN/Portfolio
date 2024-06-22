@@ -47,3 +47,7 @@ nav a{
     color: #fff;
     text-decoration: none;
 }
+
+div a{
+    margin: 5px;
+}

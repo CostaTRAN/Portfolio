@@ -9,7 +9,7 @@
             <nav>
                 <a href="index.html">Back to home page</a>
             </nav>
-            <!-- Language Selector -->
+            <!-- Language selector -->
             <div>
                 <a href="?lang=fr"><img src="./img/fr-flag.png" alt="Français"/></a>
                 <a href="?lang=en"><img src="./img/en-flag.png" alt="English"/></a>
@@ -17,7 +17,7 @@
             </div>
         </header>
         <main>
-            <!-- Section for Personal Information -->
+            <!-- Section for personal information -->
             <section>
                 <h2>Personal Information</h2>
                 <p><strong>Name: </strong><xsl:value-of select="personal_info/name"/></p>
@@ -25,27 +25,22 @@
                 <p><strong>Phone: </strong><xsl:value-of select="personal_info/phone"/></p>
                 <p><strong>Email: </strong><xsl:value-of select="personal_info/email"/></p>
                 <p><strong>Website: </strong><a href="{personal_info/website}"><xsl:value-of select="personal_info/website"/></a></p>
+                <p><strong>Links: </strong><a href="{personal_info/link}"><xsl:value-of select="personal_info/link"/></a></p>
             </section>
             
-            <!-- Profile Section -->
+            <!-- Experience section -->
             <section>
-                <h2>Profile</h2>
-                <p><xsl:value-of select="profile/summary"/></p>
+                <h2>Professional Experiences</h2>
+                <xsl:apply-templates select="experience/job"/>
             </section>
             
-            <!-- Experience Section -->
-            <section>
-                <h2>Professional Experience</h2>
-                <p><xsl:apply-templates select="experience/job"/></p>
-            </section>
-            
-            <!-- Education Section -->
+            <!-- Education section -->
             <section>
                 <h2>Education</h2>
                 <xsl:apply-templates select="education/degree"/>
             </section>
             
-            <!-- Skills Section -->
+            <!-- Skills section -->
             <section>
                 <h2>Skills</h2>
                 <ul>
@@ -53,7 +48,7 @@
                 </ul>
             </section>
             
-            <!-- Languages Section -->
+            <!-- Languages section -->
             <section>
                 <h2>Languages</h2>
                 <ul>
@@ -68,17 +63,30 @@
 
     <!-- Template to match each job element -->
     <xsl:template match="job">
-        <p><strong>Role: </strong><xsl:value-of select="title"/></p>
-        <p><strong>Company: </strong><xsl:value-of select="company"/></p>
-        <p><strong>Location: </strong><xsl:value-of select="location"/></p>
-        <p><strong>Start Date: </strong><xsl:value-of select="date"/></p>
-        <p><strong>Job Description: </strong><xsl:value-of select="responsibility"/></p>
+        <ul>
+            <li>
+                <h3><strong><xsl:value-of select="date"/></strong></h3>
+                <ul>
+                    <li><p><strong>Role: </strong><xsl:value-of select="title"/></p></li>
+                    <li><p><strong>Company: </strong><xsl:value-of select="company"/></p></li>
+                    <li><p><strong>Location: </strong><xsl:value-of select="location"/></p></li>
+                    <li><p><strong>Responsibility: </strong><xsl:value-of select="responsibility"/></p></li>
+                </ul>
+            </li>
+        </ul>
     </xsl:template>
     
     <!-- Template to match each degree element -->
     <xsl:template match="degree">
-        <p><strong><xsl:value-of select="title"/></strong> (<xsl:value-of select="date"/>)</p>
-        <p><strong>Institution: </strong><xsl:value-of select="institution"/></p>
+        <ul>
+            <li>
+                <h3><strong><xsl:value-of select="date"/></strong></h3>
+                <ul>
+                    <li><p><strong><xsl:value-of select="title"/></strong></p></li>
+                    <li><p><strong>Institution: </strong><xsl:value-of select="institution"/></p></li>
+                </ul>
+            </li>
+        </ul>
     </xsl:template>
     
     <!-- Template to match each skill element -->

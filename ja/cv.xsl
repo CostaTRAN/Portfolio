@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-    <!-- Template to match the root element cv -->
+    <!-- cv 要素を一致させるテンプレート -->
     <xsl:template match="cv">
-        <!-- Header -->
+        <!-- ヘッダー -->
         <header>
             <h1 id="title">コスタ・トランの履歴書</h1>
             <nav>
                 <a href="index.html">ホームに戻る</a>
             </nav>
-            <!-- Language Selector -->
+            <!-- 言語セレクター -->
             <div>
-                <a href="?lang=fr"><img src="./img/fr-flag.png" alt="Français"/></a>
-                <a href="?lang=en"><img src="./img/en-flag.png" alt="English"/></a>
+                <a href="?lang=fr"><img src="./img/fr-flag.png" alt="フランス語"/></a>
+                <a href="?lang=en"><img src="./img/en-flag.png" alt="英語"/></a>
                 <a href="?lang=ja"><img src="./img/ja-flag.png" alt="日本語"/></a>
             </div>
         </header>
         <main>
-            <!-- Section for Personal Information -->
+            <!-- 個人情報のセクション -->
             <section>
                 <h2>個人情報</h2>
                 <p><strong>名前: </strong><xsl:value-of select="personal_info/name"/></p>
@@ -25,27 +25,22 @@
                 <p><strong>電話: </strong><xsl:value-of select="personal_info/phone"/></p>
                 <p><strong>メール: </strong><xsl:value-of select="personal_info/email"/></p>
                 <p><strong>ウェブサイト: </strong><a href="{personal_info/website}"><xsl:value-of select="personal_info/website"/></a></p>
+                <p><strong>リンク: </strong><a href="{personal_info/link}"><xsl:value-of select="personal_info/link"/></a></p>
             </section>
             
-            <!-- Profile Section -->
-            <section>
-                <h2>プロフィール</h2>
-                <p><xsl:value-of select="profile/summary"/></p>
-            </section>
-            
-            <!-- Experience Section -->
+            <!-- 職務経験のセクション -->
             <section>
                 <h2>職務経験</h2>
-                <p><xsl:apply-templates select="experience/job"/></p>
+                <xsl:apply-templates select="experience/job"/>
             </section>
             
-            <!-- Education Section -->
+            <!-- 学歴のセクション -->
             <section>
-                <h2>教育</h2>
+                <h2>学歴</h2>
                 <xsl:apply-templates select="education/degree"/>
             </section>
             
-            <!-- Skills Section -->
+            <!-- スキルのセクション -->
             <section>
                 <h2>スキル</h2>
                 <ul>
@@ -53,7 +48,7 @@
                 </ul>
             </section>
             
-            <!-- Languages Section -->
+            <!-- 言語のセクション -->
             <section>
                 <h2>言語</h2>
                 <ul>
@@ -66,27 +61,40 @@
         </footer>
     </xsl:template>
 
-    <!-- Template to match each job element -->
+    <!-- job 要素に一致させるテンプレート -->
     <xsl:template match="job">
-        <p><strong>役割: </strong><xsl:value-of select="title"/></p>
-        <p><strong>会社: </strong><xsl:value-of select="company"/></p>
-        <p><strong>場所: </strong><xsl:value-of select="location"/></p>
-        <p><strong>開始日: </strong><xsl:value-of select="date"/></p>
-        <p><strong>職務内容: </strong><xsl:value-of select="responsibility"/></p>
+        <ul>
+            <li>
+                <h3><strong><xsl:value-of select="date"/></strong></h3>
+                <ul>
+                    <li><p><strong>役割: </strong><xsl:value-of select="title"/></p></li>
+                    <li><p><strong>会社: </strong><xsl:value-of select="company"/></p></li>
+                    <li><p><strong>所在地: </strong><xsl:value-of select="location"/></p></li>
+                    <li><p><strong>責任: </strong><xsl:value-of select="responsibility"/></p></li>
+                </ul>
+            </li>
+        </ul>
     </xsl:template>
     
-    <!-- Template to match each degree element -->
+    <!-- degree 要素に一致させるテンプレート -->
     <xsl:template match="degree">
-        <p><strong><xsl:value-of select="title"/></strong> (<xsl:value-of select="date"/>)</p>
-        <p><strong>機関: </strong><xsl:value-of select="institution"/></p>
+        <ul>
+            <li>
+                <h3><strong><xsl:value-of select="date"/></strong></h3>
+                <ul>
+                    <li><p><strong><xsl:value-of select="title"/></strong></p></li>
+                    <li><p><strong>機関: </strong><xsl:value-of select="institution"/></p></li>
+                </ul>
+            </li>
+        </ul>
     </xsl:template>
     
-    <!-- Template to match each skill element -->
+    <!-- skill 要素に一致させるテンプレート -->
     <xsl:template match="skill">
         <li><xsl:value-of select="."/></li>
     </xsl:template>
     
-    <!-- Template to match each language element -->
+    <!-- language 要素に一致させるテンプレート -->
     <xsl:template match="language">
         <li><strong><xsl:value-of select="name"/>: </strong><xsl:value-of select="proficiency"/></li>
     </xsl:template>

@@ -20,28 +20,23 @@
             <!-- Section des informations personnelles -->
             <section>
                 <h2>Informations personnelles</h2>
-                <p><strong>Nom: </strong><xsl:value-of select="personal_info/name"/></p>
-                <p><strong>Adresse: </strong><xsl:value-of select="personal_info/address"/></p>
-                <p><strong>Téléphone: </strong><xsl:value-of select="personal_info/phone"/></p>
-                <p><strong>Email: </strong><xsl:value-of select="personal_info/email"/></p>
-                <p><strong>Site Web: </strong><a href="{personal_info/website}"><xsl:value-of select="personal_info/website"/></a></p>
-            </section>
-            
-            <!-- Section du profil -->
-            <section>
-                <h2>Profil</h2>
-                <p><xsl:value-of select="profile/summary"/></p>
+                <p><strong>Nom : </strong><xsl:value-of select="personal_info/name"/></p>
+                <p><strong>Adresse : </strong><xsl:value-of select="personal_info/address"/></p>
+                <p><strong>Téléphone : </strong><xsl:value-of select="personal_info/phone"/></p>
+                <p><strong>Email : </strong><xsl:value-of select="personal_info/email"/></p>
+                <p><strong>Site Web : </strong><a href="{personal_info/website}"><xsl:value-of select="personal_info/website"/></a></p>
+                <p><strong>Liens : </strong><a href="{personal_info/link}"><xsl:value-of select="personal_info/link"/></a></p>
             </section>
             
             <!-- Section de l'expérience -->
             <section>
-                <h2>Expérience professionnelle</h2>
-                <p><xsl:apply-templates select="experience/job"/></p>
+                <h2>Expériences professionnelles</h2>
+                <xsl:apply-templates select="experience/job"/>
             </section>
             
             <!-- Section de l'éducation -->
             <section>
-                <h2>Formation</h2>
+                <h2>Formations</h2>
                 <xsl:apply-templates select="education/degree"/>
             </section>
             
@@ -68,17 +63,30 @@
 
     <!-- Template pour correspondre à chaque élément de type job -->
     <xsl:template match="job">
-        <p><strong>Rôle : </strong><xsl:value-of select="title"/></p>
-        <p><strong>Entreprise : </strong><xsl:value-of select="company"/></p>
-        <p><strong>Lieu : </strong><xsl:value-of select="location"/></p>
-        <p><strong>Date de début : </strong><xsl:value-of select="date"/></p>
-        <p><strong>Description de la mission : </strong><xsl:value-of select="responsibility"/></p>
+        <ul>
+            <li>
+                <h3><strong><xsl:value-of select="date"/></strong></h3>
+                <ul>
+                    <li><p><strong>Rôle : </strong><xsl:value-of select="title"/></p></li>
+                    <li><p><strong>Entreprise : </strong><xsl:value-of select="company"/></p></li>
+                    <li><p><strong>Lieu : </strong><xsl:value-of select="location"/></p></li>
+                    <li><p><strong>Description de la mission : </strong><xsl:value-of select="responsibility"/></p></li>
+                </ul>
+            </li>
+        </ul>
     </xsl:template>
     
     <!-- Template pour correspondre à chaque élément de type degree -->
     <xsl:template match="degree">
-        <p><strong><xsl:value-of select="title"/></strong> (<xsl:value-of select="date"/>)</p>
-        <p><strong>Institution : </strong><xsl:value-of select="institution"/></p>
+        <ul>
+            <li>
+                <h3><strong><xsl:value-of select="date"/></strong></h3>
+                <ul>
+                    <li><p><strong><xsl:value-of select="title"/></strong></p></li>
+                    <li><p><strong>Institution : </strong><xsl:value-of select="institution"/></p></li>
+                </ul>
+            </li>
+        </ul>
     </xsl:template>
     
     <!-- Template pour correspondre à chaque élément de type skill -->

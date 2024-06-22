@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE content SYSTEM "content.dtd" [
-    <!ENTITY copy "&#169;">
-]>
+<!DOCTYPE content SYSTEM "content.dtd">
 <content>
     <title>Portfolio de Costa TRAN</title>
     <about>À propos de moi</about>
-    <about_content>Les informations à propos de moi.</about_content>
+    <about_content>
+        Étudiant à l'école d'ingénieur Sup Galilée dans la spécialité informatique en apprentissage et apprenti ingénieur logiciel chez Forvia.
+    </about_content>
     <cv>CV</cv>
     <cv_content><a href="cv.html">Voir mon CV</a></cv_content>
     <video>Vidéo de présentation</video>
-    <copyright>&copy; 2024 Costa TRAN</copyright>
+    <copyright>&#169; 2024 Costa TRAN. Tous droits réservés.</copyright>
 </content>

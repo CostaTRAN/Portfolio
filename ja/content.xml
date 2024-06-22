@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE content SYSTEM "content.dtd" [
-    <!ENTITY copy "&#169;">
-]>
+<!DOCTYPE content SYSTEM "content.dtd">
 <content>
     <title>コスタ・トランのポートフォリオ</title>
     <about>自己紹介</about>
-    <about_content>私についての情報。</about_content>
+    <about_content>コンピュータ・サイエンスを専門とするSup Galilée工科学校の学生で、Forviaのソフトウェア・エンジニア見習い。</about_content>
     <cv>履歴書</cv>
     <cv_content><a href="cv.html">履歴書を見る</a></cv_content>
     <video>ビデオプレゼンテーション</video>
-    <copyright>&copy; 2024 コスタ・トラン</copyright>
+    <copyright>&#169; 2024 コスタ・トラン。無断転載を禁じます。</copyright>
 </content>

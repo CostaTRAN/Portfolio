@@ -33,11 +33,11 @@
         </section>
         <section>
             <h2 id="video">Vidéo de présentation</h2>
-            <iframe width="700" height="400" src="https://www.youtube.com/embed/tqSVEwSkhAU?cc_lang_pref=fr&cc_load_policy=1" title="Présentation de Costa TRAN" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe id="video_content" width="700" height="400" src="https://www.youtube.com/embed/tqSVEwSkhAU?cc_lang_pref=fr&cc_load_policy=1" title="Présentation de Costa TRAN" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </section>
     </main>
     <footer>
-        <p id="copyright">&copy; 2024 Costa TRAN</p>
+        <p id="copyright">&#169; 2024 Costa TRAN. Tous droits réservés.</p>
     </footer>
 
     <script>
@@ -77,9 +77,16 @@
                     .catch(error => console.error('Error loading content:', error));
             }
 
+            function changeVideoSubtitlesLanguage(lang) {
+                var iframe = document.getElementById('video_content');
+                var youtubeLangCode = lang || 'fr';
+                iframe.src = iframe.src.replace(/cc_lang_pref=[a-zA-Z-]{2}/, 'cc_lang_pref=' + youtubeLangCode);
+            }
+
             const lang = getLanguage();
             sessionStorage.setItem('lang', lang);
             fetchContent(lang);
+            changeVideoSubtitlesLanguage(lang);
         });
     </script>
 </body>

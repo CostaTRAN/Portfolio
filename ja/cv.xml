@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE cv SYSTEM "cv.dtd" [
-    <!ENTITY copy "&#169;">
-]>
+<!DOCTYPE cv SYSTEM "cv.dtd">
 <cv>
     <personal_info>
         <name>コスタ・トラン</name>
@@ -9,31 +7,32 @@
         <phone>+33 1 23 45 67 89</phone>
         <email>costa.tran@hotmail.com</email>
         <website>https://costa-tran.netlify.app/</website>
+        <link>https://github.com/CostaTRAN</link>
     </personal_info>
-    <profile>
-        <summary>
-            Sup Galiléeで見習いコンピュータエンジニアとして勉強している学生。
-        </summary>
-    </profile>
     <experience>
         <job>
+            <date>2022 - 2025</date>
             <title>ソフトウェアエンジニア見習い</title>
             <company>Forvia</company>
             <location>パリ、フランス</location>
-            <date>2022年9月5日</date>
-            <responsibility>Bluetoothスタックのテストツールの開発。</responsibility>
+            <responsibility>Bluetooth スタックのテストツールの開発。</responsibility>
         </job>
     </experience>
     <education>
         <degree>
-            <title>コンピュータエンジニアリングの学位</title>
+            <date>2022 - 2025</date>
+            <title>コンピュータ工学の学位</title>
             <institution>Sup Galilée</institution>
-            <date>2022-2025</date>
         </degree>
         <degree>
-            <title>総合科学バカロレア</title>
-            <institution>ラ・サール高校 - サン・ロザリー校</institution>
-            <date>2018-2020</date>
+            <date>2020 - 2022</date>
+            <title>情報技術における大学卒業資格</title>
+            <institution>ヴィレタヌーズ工科大学</institution>
+        </degree>
+        <degree>
+            <date>2018 - 2020</date>
+            <title>一般科学バカロレア</title>
+            <institution>ラ サール - サン ロザイア 高校</institution>
         </degree>
     </education>
     <skills>
@@ -59,5 +58,5 @@
             <proficiency>初心者</proficiency>
         </language>
     </languages>
-    <copyright>&copy; 2024 コスタ・トラン</copyright>
+    <copyright>&#169; 2024 コスタ・トラン。無断転載を禁じます。</copyright>
 </cv>
