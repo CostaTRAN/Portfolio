@@ -10,8 +10,7 @@
         <div property="header">
             <h1 id="title" property="dc:title">CV de Costa TRAN</h1>
         </div>
-        <div
-            property="nav">
+        <div property="nav">
             <a href="index.html" property="dc:relation">Accueil</a>
             <a href="cv.html" property="dc:relation">CV</a>
             <!-- Sélecteur de langue -->
@@ -24,8 +23,7 @@
                     property="foaf:depiction" />
             </div>
         </div>
-        <div
-            property="main">
+        <div property="main">
             <!-- Section des informations personnelles -->
             <div property="foaf:Person" about="#me">
                 <h2>Informations personnelles</h2>
@@ -55,7 +53,11 @@
                 </p>
                 <p>
                     <strong>Email : </strong>
-                    <span property="foaf:mbox"><a href="mailto:{personal_info/email}"><xsl:value-of select="personal_info/email" /></a></span>
+                    <span property="foaf:mbox">
+                        <a href="mailto:{personal_info/email}">
+                            <xsl:value-of select="personal_info/email" />
+                        </a>
+                    </span>
                 </p>
                 <p>
                     <strong>Site Web : </strong>
@@ -99,11 +101,15 @@
                 </ul>
             </div>
         </div>
-        <div
-            property="footer">
+        <div property="footer">
             <p id="copyright" property="dc:rightsHolder">
                 <xsl:value-of select="copyright" />
             </p>
+            <p about="" resource="https://www.w3.org/TR/rdfa-syntax" rel="dc:conformsTo" xmlns:dc="http://purl.org/dc/terms/">
+                <a href="https://validator.w3.org/markup/check?uri=referer">
+                   <img src="https://www.w3.org/Icons/valid-xhtml-rdfa" alt="Valid XHTML + RDFa" height="31" width="88" />
+                </a>
+             </p>
         </div>
     </xsl:template>
 

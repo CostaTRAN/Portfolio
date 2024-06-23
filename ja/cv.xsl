@@ -101,11 +101,15 @@
                 </ul>
             </div>
         </div>
-        <div
-            property="footer">
+        <div property="footer">
             <p id="copyright" property="dc:rightsHolder">
                 <xsl:value-of select="copyright" />
             </p>
+            <p about="" resource="https://www.w3.org/TR/rdfa-syntax" rel="dc:conformsTo" xmlns:dc="http://purl.org/dc/terms/">
+                <a href="https://validator.w3.org/markup/check?uri=referer">
+                   <img src="https://www.w3.org/Icons/valid-xhtml-rdfa" alt="Valid XHTML + RDFa" height="31" width="88" />
+                </a>
+             </p>
         </div>
     </xsl:template>
 
