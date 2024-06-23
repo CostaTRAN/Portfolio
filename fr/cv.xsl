@@ -6,16 +6,17 @@
         <!-- En-tête -->
         <header>
             <h1 id="title">CV de Costa TRAN</h1>
-            <nav>
-                <a href="index.html">Retour à l'accueil</a>
-            </nav>
+        </header>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="cv.html">CV</a>
             <!-- Sélecteur de langue -->
             <div>
-                <a href="?lang=fr"><img src="./img/fr-flag.png" alt="Français"/></a>
-                <a href="?lang=en"><img src="./img/en-flag.png" alt="English"/></a>
-                <a href="?lang=ja"><img src="./img/ja-flag.png" alt="日本語"/></a>
+               <a href="?lang=fr"><img src="./img/fr-flag.png" alt="Français"/></a>
+               <a href="?lang=en"><img src="./img/en-flag.png" alt="English"/></a>
+               <a href="?lang=ja"><img src="./img/ja-flag.png" alt="日本語"/></a>
             </div>
-        </header>
+         </nav>
         <main>
             <!-- Section des informations personnelles -->
             <section>

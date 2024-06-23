@@ -5,17 +5,18 @@
     <xsl:template match="cv">
         <!-- Header -->
         <header>
-            <h1 id="title">CV of Costa TRAN</h1>
-            <nav>
-                <a href="index.html">Back to home page</a>
-            </nav>
+            <h1 id="title">Resume of Costa TRAN</h1>
+        </header>
+        <nav>
+            <a href="index.html">Homepage</a>
+            <a href="cv.html">Resume</a>
             <!-- Language selector -->
             <div>
                 <a href="?lang=fr"><img src="./img/fr-flag.png" alt="Français"/></a>
                 <a href="?lang=en"><img src="./img/en-flag.png" alt="English"/></a>
                 <a href="?lang=ja"><img src="./img/ja-flag.png" alt="日本語"/></a>
             </div>
-        </header>
+        </nav>
         <main>
             <!-- Section for personal information -->
             <section>

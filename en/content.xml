@@ -2,10 +2,10 @@
 <!DOCTYPE content SYSTEM "content.dtd">
 <content>
     <title>Portfolio of Costa TRAN</title>
+    <homepage>Homepage</homepage>
+    <cv>Resume</cv>
     <about>About me</about>
     <about_content>Student at Sup Galilée engineering school, specializing in computer science, and apprentice software engineer at Forvia.</about_content>
-    <cv>CV</cv>
-    <cv_content><a href="cv.html">View my CV</a></cv_content>
     <video>Video presentation</video>
     <copyright>&#169; 2024 Costa TRAN. All rights reserved.</copyright>
 </content>

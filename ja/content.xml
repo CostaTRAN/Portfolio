@@ -2,10 +2,10 @@
 <!DOCTYPE content SYSTEM "content.dtd">
 <content>
     <title>コスタ・トランのポートフォリオ</title>
+    <homepage>ホーム</homepage>
+    <cv>履歴書</cv>
     <about>自己紹介</about>
     <about_content>コンピュータ・サイエンスを専門とするSup Galilée工科学校の学生で、Forviaのソフトウェア・エンジニア見習い。</about_content>
-    <cv>履歴書</cv>
-    <cv_content><a href="cv.html">履歴書を見る</a></cv_content>
     <video>ビデオプレゼンテーション</video>
     <copyright>&#169; 2024 コスタ・トラン。無断転載を禁じます。</copyright>
 </content>

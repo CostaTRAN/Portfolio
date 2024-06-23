@@ -1,9 +1,9 @@
-<!ELEMENT content (title,about,about_content,cv,cv_content,video,copyright)>
+<!ELEMENT content (title,homepage,cv,about,about_content,video,copyright)>
 <!ELEMENT title (#PCDATA)>
+<!ELEMENT homepage (#PCDATA)>
+<!ELEMENT cv (#PCDATA)>
 <!ELEMENT about (#PCDATA)>
 <!ELEMENT about_content (#PCDATA)>
-<!ELEMENT cv (#PCDATA)>
-<!ELEMENT cv_content (a)>
 <!ELEMENT a (#PCDATA)>
 <!ATTLIST a href NMTOKEN #REQUIRED>
 <!ELEMENT video (#PCDATA)>

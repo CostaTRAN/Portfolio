@@ -14,22 +14,22 @@
 <body vocab="http://xmlns.com/foaf/0.1/" typeof="foaf:Person" about="#me">
     <header vocab="http://purl.org/dc/elements/1.1/">
         <h1 id="title" property="dc:title">Portfolio de Costa TRAN</h1>
+    </header>
+    <nav>
+        <a id="homepage" href="index.html">Accueil</a>
+        <a id="cv" href="cv.html">CV</a>
         <!-- Sélecteur de langue -->
         <div>
             <a href="?lang=fr"><img src="./img/fr-flag.png" alt="Français"></a>
             <a href="?lang=en"><img src="./img/en-flag.png" alt="English"></a>
             <a href="?lang=ja"><img src="./img/ja-flag.png" alt="日本語"></a>
         </div>
-    </header>
+    </nav>
     <main>
         <!-- Contenu principal -->
         <section>
             <h2 id="about" property="foaf:name">À propos de moi</h2>
             <p id="about_content" property="foaf:description">Étudiant à l'école d'ingénieur Sup Galilée dans la spécialité informatique en apprentissage et apprenti ingénieur logiciel chez Forvia.</p>
-        </section>
-        <section>
-            <h2 id="cv">CV</h2>
-            <p><a href="cv.html" id="cv_content" property="foaf:page">Voir mon CV</a></p>
         </section>
         <section>
             <h2 id="video">Vidéo de présentation</h2>
@@ -67,10 +67,10 @@
                     .then(str => (new window.DOMParser()).parseFromString(str, "application/xml"))
                     .then(data => {
                         document.getElementById('title').textContent = data.querySelector('title').textContent;
+                        document.getElementById('homepage').textContent = data.querySelector('homepage').textContent;
+                        document.getElementById('cv').textContent = data.querySelector('cv').textContent;
                         document.getElementById('about').textContent = data.querySelector('about').textContent;
                         document.getElementById('about_content').textContent = data.querySelector('about_content').textContent;
-                        document.getElementById('cv').textContent = data.querySelector('cv').textContent;
-                        document.getElementById('cv_content').textContent = data.querySelector('cv_content').textContent;
                         document.getElementById('video').textContent = data.querySelector('video').textContent;
                         document.getElementById('copyright').textContent = data.querySelector('copyright').textContent;
                     })

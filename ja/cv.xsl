@@ -6,16 +6,17 @@
         <!-- ヘッダー -->
         <header>
             <h1 id="title">コスタ・トランの履歴書</h1>
-            <nav>
-                <a href="index.html">ホームに戻る</a>
-            </nav>
+        </header>
+        <nav>
+            <a href="index.html">ホーム</a>
+            <a href="cv.html">履歴書</a>
             <!-- 言語セレクター -->
             <div>
                 <a href="?lang=fr"><img src="./img/fr-flag.png" alt="フランス語"/></a>
                 <a href="?lang=en"><img src="./img/en-flag.png" alt="英語"/></a>
                 <a href="?lang=ja"><img src="./img/ja-flag.png" alt="日本語"/></a>
             </div>
-        </header>
+        </nav>
         <main>
             <!-- 個人情報のセクション -->
             <section>
