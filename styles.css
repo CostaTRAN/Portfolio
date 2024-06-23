@@ -55,12 +55,14 @@ nav a{
     color: #fff;
     text-decoration: none;
     padding: 5px;
+    border-radius: 5px;
 }
 
 nav > a:hover{
     background-color: #0056b3;
 }
 
-div a{
+.flag{
     margin: 5px;
+    cursor: pointer;
 }
