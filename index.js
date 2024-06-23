@@ -35,16 +35,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function changeVideoSubtitlesLanguage(lang) {
-        var iframe = document.getElementById('video_content');
+        var object = document.getElementById('youtube_video');
+        var video = document.getElementById('video_content');
         var youtubeLangCode = lang || 'fr';
-        iframe.src = iframe.src.replace(/cc_lang_pref=[a-zA-Z-]{2}/, 'cc_lang_pref=' + youtubeLangCode);
+        
+        object.data = object.data.replace(/cc_lang_pref=[a-zA-Z-]{2}/, 'cc_lang_pref=' + youtubeLangCode);
+        video.href = video.href.replace(/cc_lang_pref=[a-zA-Z-]{2}/, 'cc_lang_pref=' + youtubeLangCode);
     }
 
     document.getElementById('lang-selector').addEventListener('click', function (event) {
         if (event.target.classList.contains('flag')) {
-            const selectedLang = event.target.dataset.lang;
+            const selectedLang = event.target.getAttribute('about');
             fetchContent(selectedLang);
             changeVideoSubtitlesLanguage(selectedLang);
+
             window.history.pushState({}, '', `?lang=${selectedLang}`);
             sessionStorage.setItem('lang', selectedLang);
         }

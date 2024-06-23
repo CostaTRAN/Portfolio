@@ -1,97 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:vocab="http://schema.org/"
+    xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 
     <!-- cv 要素を一致させるテンプレート -->
     <xsl:template match="cv">
         <!-- ヘッダー -->
-        <header>
-            <h1 id="title">コスタ・トランの履歴書</h1>
-        </header>
-        <nav>
-            <a href="index.html">ホーム</a>
-            <a href="cv.html">履歴書</a>
+        <div property="header">
+            <h1 id="title" property="dc:title">コスタ・トランの履歴書</h1>
+        </div>
+        <div property="nav">
+            <a href="index.html" property="dc:relation">ホーム</a>
+            <a href="cv.html" property="dc:relation">履歴書</a>
             <!-- 言語セレクター -->
             <div id="lang-selector">
-                <img src="./img/fr-flag.png" alt="Français" class="flag" data-lang="fr" />
-                <img src="./img/en-flag.png" alt="English" class="flag" data-lang="en" />
-                <img src="./img/ja-flag.png" alt="日本語" class="flag" data-lang="ja" />
+                <img src="./img/fr-flag.png" alt="Français" class="flag" about="fr"
+                    property="foaf:depiction" />
+                <img src="./img/en-flag.png" alt="English" class="flag" about="en"
+                    property="foaf:depiction" />
+                <img src="./img/ja-flag.png" alt="日本語" class="flag" about="ja"
+                    property="foaf:depiction" />
             </div>
-        </nav>
-        <main>
+        </div>
+        <div property="main">
             <!-- 個人情報のセクション -->
-            <section>
+            <div property="foaf:Person" about="#me">
                 <h2>個人情報</h2>
                 <p>
                     <strong>名: </strong>
-                    <xsl:value-of select="personal_info/first_name" />
+                    <span property="foaf:givenName">
+                        <xsl:value-of select="personal_info/first_name" />
+                    </span>
                 </p>
                 <p>
                     <strong>名字: </strong>
-                    <xsl:value-of select="personal_info/last_name" />
+                    <span property="foaf:familyName">
+                        <xsl:value-of select="personal_info/last_name" />
+                    </span>
                 </p>
                 <p>
                     <strong>住所: </strong>
-                    <xsl:value-of select="personal_info/address" />
+                    <span property="foaf:based_near">
+                        <xsl:value-of select="personal_info/address" />
+                    </span>
                 </p>
                 <p>
                     <strong>電話: </strong>
-                    <xsl:value-of select="personal_info/phone" />
+                    <span property="foaf:phone">
+                        <xsl:value-of select="personal_info/phone" />
+                    </span>
                 </p>
                 <p>
                     <strong>メール: </strong>
-                    <xsl:value-of select="personal_info/email" />
+                    <span property="foaf:mbox">
+                        <a href="mailto:{personal_info/email}">
+                            <xsl:value-of select="personal_info/email" />
+                        </a>
+                    </span>
                 </p>
                 <p>
                     <strong>ウェブサイト: </strong>
-                    <a href="{personal_info/website}">
+                    <a href="{personal_info/website}" property="foaf:homepage">
                         <xsl:value-of select="personal_info/website" />
                     </a>
                 </p>
                 <p>
                     <strong>リンク: </strong>
-                    <a href="{personal_info/link}">
+                    <a href="{personal_info/link}" property="foaf:page">
                         <xsl:value-of select="personal_info/link" />
                     </a>
                 </p>
-            </section>
+            </div>
 
             <!-- 職務経験のセクション -->
-            <section>
+            <div>
                 <h2>職務経験</h2>
                 <xsl:apply-templates select="experience/job" />
-            </section>
+            </div>
 
             <!-- 学歴のセクション -->
-            <section>
+            <div>
                 <h2>学歴</h2>
                 <xsl:apply-templates select="education/degree" />
-            </section>
+            </div>
 
             <!-- スキルのセクション -->
-            <section>
+            <div>
                 <h2>スキル</h2>
                 <ul>
                     <xsl:apply-templates select="skills/skill" />
                 </ul>
-            </section>
+            </div>
 
             <!-- 言語のセクション -->
-            <section>
+            <div>
                 <h2>言語</h2>
                 <ul>
                     <xsl:apply-templates select="languages/language" />
                 </ul>
-            </section>
-        </main>
-        <footer>
-            <xsl:apply-templates select="copyright" />
-        </footer>
+            </div>
+        </div>
+        <div
+            property="footer">
+            <p id="copyright" property="dc:rightsHolder">
+                <xsl:value-of select="copyright" />
+            </p>
+        </div>
     </xsl:template>
 
     <!-- job 要素に一致させるテンプレート -->
     <xsl:template match="job">
         <ul>
-            <li>
+            <li typeof="schema:JobPosting">
                 <h3>
                     <strong>
                         <xsl:value-of select="date" />
@@ -101,25 +122,33 @@
                     <li>
                         <p>
                             <strong>役割: </strong>
-                            <xsl:value-of select="title" />
+                            <span property="schema:jobTitle">
+                                <xsl:value-of select="title" />
+                            </span>
                         </p>
                     </li>
                     <li>
                         <p>
                             <strong>会社: </strong>
-                            <xsl:value-of select="company" />
+                            <span property="schema:worksFor">
+                                <xsl:value-of select="company" />
+                            </span>
                         </p>
                     </li>
                     <li>
                         <p>
                             <strong>所在地: </strong>
-                            <xsl:value-of select="location" />
+                            <span property="schema:location">
+                                <xsl:value-of select="location" />
+                            </span>
                         </p>
                     </li>
                     <li>
                         <p>
                             <strong>責任: </strong>
-                            <xsl:value-of select="responsibility" />
+                            <span property="schema:description">
+                                <xsl:value-of select="responsibility" />
+                            </span>
                         </p>
                     </li>
                 </ul>
@@ -130,7 +159,7 @@
     <!-- degree 要素に一致させるテンプレート -->
     <xsl:template match="degree">
         <ul>
-            <li>
+            <li typeof="schema:EducationalOccupationalCredential">
                 <h3>
                     <strong>
                         <xsl:value-of select="date" />
@@ -139,15 +168,18 @@
                 <ul>
                     <li>
                         <p>
-                            <strong>
+                            <strong>学位: </strong>
+                            <span property="schema:educationalCredentialAwarded">
                                 <xsl:value-of select="title" />
-                            </strong>
+                            </span>
                         </p>
                     </li>
                     <li>
                         <p>
                             <strong>機関: </strong>
-                            <xsl:value-of select="institution" />
+                            <span property="schema:alumniOf">
+                                <xsl:value-of select="institution" />
+                            </span>
                         </p>
                     </li>
                 </ul>
@@ -157,7 +189,7 @@
 
     <!-- skill 要素に一致させるテンプレート -->
     <xsl:template match="skill">
-        <li>
+        <li property="schema:hasSkill">
             <xsl:value-of select="." />
         </li>
     </xsl:template>
@@ -166,7 +198,9 @@
     <xsl:template match="language">
         <li>
             <strong><xsl:value-of select="name" />: </strong>
-            <xsl:value-of select="proficiency" />
+            <span property="schema:knowsLanguage">
+                <xsl:value-of select="proficiency" />
+            </span>
         </li>
     </xsl:template>
 </xsl:stylesheet>

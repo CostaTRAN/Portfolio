@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         document.getElementById('lang-selector').addEventListener('click', function (event) {
                             if (event.target.classList.contains('flag')) {
-                                const selectedLang = event.target.dataset.lang;
+                                const selectedLang = event.target.getAttribute('about');
                                 window.history.pushState({}, '', `?lang=${selectedLang}`);
                                 sessionStorage.setItem('lang', selectedLang);
                                 selectedXmlFile = `./${selectedLang}/cv.xml`;

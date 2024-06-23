@@ -1,52 +1,60 @@
-<!DOCTYPE html>
-<html lang="fr" vocab="http://schema.org/" typeof="WebPage" xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" xmlns:vocab="http://schema.org/"
+    xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de Costa TRAN</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title property="dc:title">Portfolio de Costa TRAN</title>
     <!-- Styles CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <!-- Balise alternate pour SEO -->
-    <link rel="alternate" hreflang="en" href="index.html?lang=en">
-    <link rel="alternate" hreflang="fr" href="index.html?lang=fr">
-    <link rel="alternate" hreflang="ja" href="index.html?lang=ja">
+    <link rel="alternate" hreflang="en" href="index.html?lang=en" />
+    <link rel="alternate" hreflang="fr" href="index.html?lang=fr" />
+    <link rel="alternate" hreflang="ja" href="index.html?lang=ja" />
 </head>
 
-<body>
-    <header>
-        <h1 id="title">Portfolio de Costa TRAN</h1>
-    </header>
-    <nav>
-        <a id="homepage" href="index.html">Accueil</a>
-        <a id="cv" href="cv.html">CV</a>
+<body typeof="foaf:Document">
+    <div property="header">
+        <h1 id="title" property="dc:title">Portfolio de Costa TRAN</h1>
+    </div>
+    <div property="nav">
+        <a id="homepage" href="index.html" property="dc:relation">Accueil</a>
+        <a id="cv" href="cv.html" property="dc:relation">CV</a>
         <!-- Sélecteur de langue -->
         <div id="lang-selector">
-            <img src="./img/fr-flag.png" alt="Français" class="flag" data-lang="fr">
-            <img src="./img/en-flag.png" alt="English" class="flag" data-lang="en">
-            <img src="./img/ja-flag.png" alt="日本語" class="flag" data-lang="ja">
+            <img src="./img/fr-flag.png" alt="Français" class="flag" about="fr" property="foaf:depiction" />
+            <img src="./img/en-flag.png" alt="English" class="flag" about="en" property="foaf:depiction" />
+            <img src="./img/ja-flag.png" alt="日本語" class="flag" about="ja" property="foaf:depiction" />
         </div>
-    </nav>
-    <main>
+    </div>
+    <div property="main" typeof="schema:WebPage">
         <!-- Contenu principal -->
-        <section>
-            <h2 id="about">À propos de moi</h2>
-            <p id="about_content">Étudiant à l'école d'ingénieur Sup Galilée dans la spécialité informatique en
+        <div typeof="foaf:Person" about="#me">
+            <h2 id="about" property="foaf:name">À propos de moi</h2>
+            <p id="about_content" property="dc:description">Étudiant à l'école d'ingénieur Sup Galilée dans la
+                spécialité informatique en
                 apprentissage et apprenti ingénieur logiciel chez Forvia.</p>
-        </section>
-        <section>
-            <h2 id="video">Vidéo de présentation</h2>
-            <iframe id="video_content" width="700" height="400"
-                src="https://www.youtube.com/embed/tqSVEwSkhAU?cc_lang_pref=fr&cc_load_policy=1"
-                title="Présentation de Costa TRAN"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </section>
-    </main>
-    <footer>
-        <p id="copyright">&#169; 2024 Costa TRAN. Tous droits réservés.</p>
-    </footer>
-    <script src="index.js"></script>
+        </div>
+        <div id="video_section">
+            <h2 id="video" property="dc:title">Vidéo de présentation</h2>
+            <object type="text/html" id="youtube_video"
+                data="https://www.youtube.com/embed/tqSVEwSkhAU?cc_lang_pref=fr;cc_load_policy=1"
+                property="foaf:Document">
+                <a href="https://www.youtube.com/embed/tqSVEwSkhAU?cc_lang_pref=fr;cc_load_policy=1" id="video_content"
+                    property="foaf:page"></a>
+            </object>
+        </div>
+    </div>
+    <div property="footer">
+        <p id="copyright" property="dc:rightsHolder">&#169; 2024 Costa TRAN. Tous droits réservés.</p>
+        <p about="" resource="https://www.w3.org/TR/rdfa-syntax" rel="dc:conformsTo"
+            xmlns:dc="http://purl.org/dc/terms/">
+            <a href="https://validator.w3.org/markup/check?uri=referer">
+                <img src="https://www.w3.org/Icons/valid-xhtml-rdfa" alt="Valid XHTML + RDFa" height="31" width="88" />
+            </a>
+        </p>
+    </div>
+    <script type="text/javascript" src="index.js"></script>
 </body>
 
 </html>

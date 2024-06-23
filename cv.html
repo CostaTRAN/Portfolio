@@ -1,64 +1,66 @@
-<!DOCTYPE html>
-<html lang="fr" vocab="http://schema.org/" typeof="WebPage" xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" version="XHTML+RDFa 1.0" xmlns:vocab="http://schema.org/"
+   xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" typeof="vocab:WebPage">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>CV de Costa TRAN</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <title property="dc:title">CV de Costa TRAN</title>
    <!-- Styles CSS -->
-   <link rel="stylesheet" type="text/css" href="styles.css">
+   <link rel="stylesheet" type="text/css" href="styles.css" />
    <!-- Balise alternate pour SEO -->
-   <link rel="alternate" hreflang="en" href="index.html?lang=en">
-   <link rel="alternate" hreflang="fr" href="index.html?lang=fr">
-   <link rel="alternate" hreflang="ja" href="index.html?lang=ja">
-   <script src="cv.js"></script>
+   <link rel="alternate" hreflang="en" href="index.html?lang=en" />
+   <link rel="alternate" hreflang="fr" href="index.html?lang=fr" />
+   <link rel="alternate" hreflang="ja" href="index.html?lang=ja" />
+   <script type="text/javascript" src="cv.js"></script>
 </head>
 
-<body>
-   <header>
-      <h1 id="title">CV de Costa TRAN</h1>
-   </header>
-   <nav>
-      <a href="index.html">Accueil</a>
-      <a href="cv.html">CV</a>
+<body typeof="foaf:Document">
+   <div property="header">
+      <h1 id="title" property="dc:title">CV de Costa TRAN</h1>
+   </div>
+   <div property="nav">
+      <a href="index.html" property="dc:relation">Accueil</a>
+      <a href="cv.html" property="dc:relation">CV</a>
       <div id="lang-selector">
-         <img src="./img/fr-flag.png" alt="Français" class="flag" data-lang="fr">
-         <img src="./img/en-flag.png" alt="English" class="flag" data-lang="en">
-         <img src="./img/ja-flag.png" alt="日本語" class="flag" data-lang="ja">
+         <img src="./img/fr-flag.png" alt="Français" class="flag" about="fr" property="foaf:depiction" />
+         <img src="./img/en-flag.png" alt="English" class="flag" about="en" property="foaf:depiction" />
+         <img src="./img/ja-flag.png" alt="日本語" class="flag" about="ja" property="foaf:depiction" />
       </div>
-   </nav>
-   <main>
-      <section>
+   </div>
+   <div property="main">
+      <div property="foaf:Person" about="#me">
          <h2>Informations personnelles</h2>
          <p>
-            <strong>Prénom : </strong>Costa
+            <strong>Prénom : </strong><span property="foaf:givenName">Costa</span>
          </p>
          <p>
-            <strong>Nom : </strong>Tran
+            <strong>Nom : </strong><span property="foaf:familyName">Tran</span>
          </p>
          <p>
-            <strong>Adresse : </strong>123 Rue Exemple, 75000 Paris, France
+            <strong>Adresse : </strong><span property="foaf:based_near">123 Rue Exemple, 75000 Paris, France</span>
          </p>
          <p>
-            <strong>Téléphone : </strong>+33 1 23 45 67 89
+            <strong>Téléphone : </strong><span property="foaf:phone">+33 1 23 45 67 89</span>
          </p>
          <p>
-            <strong>Email : </strong>costa.tran@hotmail.com
+            <strong>Email : </strong><span property="foaf:mbox">
+               <a href="mailto:costa.tran@hotmail.com">costa.tran@hotmail.com</a>
+            </span>
          </p>
          <p>
             <strong>Site Web : </strong>
-            <a href="https://costa-tran.netlify.app/">
+            <a href="https://costa-tran.netlify.app/" property="foaf:homepage">
                https://costa-tran.netlify.app/
             </a>
          </p>
          <p>
             <strong>Liens : </strong>
-            <a href="https://github.com/CostaTRAN">
+            <a href="https://github.com/CostaTRAN" property="foaf:page">
                https://github.com/CostaTRAN
             </a>
          </p>
-      </section>
-      <section>
+      </div>
+      <div>
          <h2>Expériences professionnelles</h2>
          <ul>
             <li>
@@ -66,30 +68,31 @@
                <ul>
                   <li>
                      <p>
-                        <strong>Rôle : </strong> Apprenti ingénieur logiciel
+                        <strong>Rôle : </strong><span property="schema:jobTitle">Apprenti ingénieur logiciel</span>
                      </p>
                   </li>
                   <li>
                      <p>
-                        <strong>Entreprise : </strong>Forvia
+                        <strong>Entreprise : </strong><span property="schema:worksFor">Forvia</span>
                      </p>
                   </li>
                   <li>
                      <p>
-                        <strong>Lieu : </strong>Paris, France
+                        <strong>Lieu : </strong><span property="schema:location">Paris, France</span>
                      </p>
                   </li>
                   <li>
                      <p>
-                        <strong>Description de la mission : </strong>Développement d'un outil de test pour la stack
-                        Bluetooth.
+                        <strong>Description de la mission : </strong><span property="schema:description">Développement
+                           d'un outil de test pour la stack
+                           Bluetooth.</span>
                      </p>
                   </li>
                </ul>
             </li>
          </ul>
-      </section>
-      <section>
+      </div>
+      <div>
          <h2>Formations</h2>
          <ul>
             <li>
@@ -97,12 +100,13 @@
                <ul>
                   <li>
                      <p>
-                        <strong>Diplôme d'Ingénieur Informatique</strong>
+                        <strong>Diplôme : </strong><span property="schema:educationalCredentialAwarded">Diplôme
+                           d'Ingénieur Informatique</span>
                      </p>
                   </li>
                   <li>
                      <p>
-                        <strong>Institution : </strong>Sup Galilée
+                        <strong>Institution : </strong><span property="schema:alumniOf">Sup Galilée</span>
                      </p>
                   </li>
                </ul>
@@ -112,12 +116,14 @@
                <ul>
                   <li>
                      <p>
-                        <strong>Diplôme Universitaire Technologique Informatique (DUT)</strong>
+                        <strong>Diplôme : </strong><span property="schema:educationalCredentialAwarded">Diplôme
+                           Universitaire Technologique Informatique (DUT)</span>
                      </p>
                   </li>
                   <li>
                      <p>
-                        <strong>Institution : </strong>Institut Universitaire Technologique de Villetaneuse (IUT)
+                        <strong>Institution : </strong><span property="schema:alumniOf">Institut Universitaire
+                           Technologique de Villetaneuse (IUT)</span>
                      </p>
                   </li>
                </ul>
@@ -127,48 +133,50 @@
                <ul>
                   <li>
                      <p>
-                        <strong>Baccalauréat Général Scientifique</strong>
+                        <strong>Diplôme : </strong><span property="schema:educationalCredentialAwarded">Baccalauréat
+                           Général Scientifique</span>
                      </p>
                   </li>
                   <li>
                      <p>
-                        <strong>Institution : </strong>Lycée La Salle - Saint Rosaire
+                        <strong>Institution : </strong><span property="schema:alumniOf">Lycée La Salle - Saint
+                           Rosaire</span>
                      </p>
                   </li>
                </ul>
             </li>
          </ul>
-      </section>
-      <section>
+      </div>
+      <div>
          <h2>Compétences</h2>
          <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>C++</li>
-            <li>XML</li>
-            <li>JSON</li>
-            <li>MySQL</li>
+            <li property="schema:hasSkill">HTML</li>
+            <li property="schema:hasSkill">CSS</li>
+            <li property="schema:hasSkill">JavaScript</li>
+            <li property="schema:hasSkill">C++</li>
+            <li property="schema:hasSkill">XML</li>
+            <li property="schema:hasSkill">JSON</li>
+            <li property="schema:hasSkill">MySQL</li>
          </ul>
-      </section>
-      <section>
+      </div>
+      <div>
          <h2>Langues</h2>
          <ul>
             <li>
-               <strong>Français: </strong>Natif
+               <strong>Français: </strong><span property="schema:knowsLanguage">Natif</span>
             </li>
             <li>
-               <strong>Anglais: </strong>B1
+               <strong>Anglais: </strong><span property="schema:knowsLanguage">B1</span>
             </li>
             <li>
-               <strong>Japonais: </strong>Débutant
+               <strong>Japonais: </strong><span property="schema:knowsLanguage">Débutant</span>
             </li>
          </ul>
-      </section>
-   </main>
-   <footer>
-      <p id="copyright">&#169; 2024 Costa TRAN. Tous droits réservés.</p>
-   </footer>
+      </div>
+   </div>
+   <div property="footer">
+      <p id="copyright" property="dc:rightsHolder">&#169; 2024 Costa TRAN. Tous droits réservés.</p>
+   </div>
 </body>
 
 </html>

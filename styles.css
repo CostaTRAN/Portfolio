@@ -12,22 +12,22 @@ body {
     flex-direction: column;
 }
 
-header {
+div[property="header"] {
     background-color: #333;
     color: #fff;
     text-align: center;
 }
 
-header h1 {
+div[property="header"] h1 {
     margin: 0;
 }
 
-main {
+div[property="main"] {
     padding: 20px;
     flex: 1 0 auto;
 }
 
-footer {
+div[property="footer"] {
     background-color: #333;
     color: #fff;
     text-align: center;
@@ -37,12 +37,7 @@ footer {
     flex-shrink: 0;
 }
 
-img {
-    width: 30px;
-    height: 20px;
-}
-
-nav {
+div[property="nav"] {
     background-color: dodgerblue;
     display: flex;
     align-items: center;
@@ -51,18 +46,25 @@ nav {
     padding: 10px;
 }
 
-nav a{
+div[property="nav"] a{
     color: #fff;
     text-decoration: none;
     padding: 5px;
     border-radius: 5px;
 }
 
-nav > a:hover{
+div[property="nav"] > a:hover{
     background-color: #0056b3;
 }
 
 .flag{
+    width: 30px;
+    height: 20px;
     margin: 5px;
     cursor: pointer;
+}
+
+#youtube_video {
+    width: 700px;
+    height: 400px;
 }
