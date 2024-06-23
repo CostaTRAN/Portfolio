@@ -27,16 +27,6 @@ div[property="main"] {
     flex: 1 0 auto;
 }
 
-div[property="footer"] {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    flex-shrink: 0;
-}
-
 div[property="nav"] {
     background-color: dodgerblue;
     display: flex;
@@ -67,4 +57,17 @@ div[property="nav"] > a:hover{
 #youtube_video {
     width: 700px;
     height: 400px;
+}
+
+div[property="footer"] {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    padding-top: 10px;
+    flex-shrink: 0;
+}
+
+div[property="footer"] p:not(:first-child) {
+    display: inline-block;
 }

@@ -105,11 +105,20 @@
             <p id="copyright" property="dc:rightsHolder">
                 <xsl:value-of select="copyright" />
             </p>
-            <p about="" resource="https://www.w3.org/TR/rdfa-syntax" rel="dc:conformsTo" xmlns:dc="http://purl.org/dc/terms/">
+            <p about="" resource="https://www.w3.org/TR/rdfa-syntax" rel="dc:conformsTo"
+                xmlns:dc="http://purl.org/dc/terms/">
                 <a href="https://validator.w3.org/markup/check?uri=referer">
-                   <img src="https://www.w3.org/Icons/valid-xhtml-rdfa" alt="Valid XHTML + RDFa" height="31" width="88" />
+                    <img src="https://www.w3.org/Icons/valid-xhtml-rdfa" alt="Valid XHTML + RDFa"
+                        height="31" width="88" />
                 </a>
-             </p>
+            </p>
+            <p>
+                <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                    <img style="border:0;width:88px;height:31px"
+                        src="https://jigsaw.w3.org/css-validator/images/vcss"
+                        alt="CSS Valide !" />
+                </a>
+            </p>
         </div>
     </xsl:template>
 
