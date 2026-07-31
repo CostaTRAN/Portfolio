@@ -8,7 +8,7 @@
     <xsl:template match="cv">
         <!-- Header -->
         <div property="header">
-            <h1 id="title" property="dc:title">Resume of Costa TRAN</h1>
+            <h1 id="title" property="dc:title">Costa Tran's Resume</h1>
         </div>
         <div property="nav">
             <a href="index.html" property="dc:relation">Homepage</a>
